@@ -54,6 +54,18 @@ Flags booleansas (com portas avançadas onde aplicável):
 - `verify_positive_twice` — reduzir falsos positivos em *exploits*
 - `module_timeout_s` — tempo máximo por módulo (proteção contra *hang*)
 
+### ML advisor (opcional, `show advanced`)
+
+Reordenar filas de módulos e sugerir ou aplicar `timing_template` com base num modelo leve (vetor de opções + pesos em JSON). **Desligado por omissão.**
+
+| Opção | Descrição |
+|-------|-----------|
+| `ml_advisor` | `true` para ativar; mostra avisos sobre CPU/RAM (o grosso do custo continua a ser `threads` e I/O de rede). |
+| `ml_auto_timing` | Com `ml_advisor true`, **substitui** `timing_template` pela sugestão do advisor. |
+| `ml_use_gpu` | Se PyTorch+CUDA estiver instalado (`pip install .[ml-gpu]` no projeto), calcula logits do *timing* na GPU — ganho marginal; testes HTTP/SSH não ficam “GPU-acelerados”. |
+
+Para cargas criptográficas em massa (ex.: WPA/PMKID), use ferramentas externas (hashcat), não este *advisor*.
+
 ### Exemplo
 
 ```text

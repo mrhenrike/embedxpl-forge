@@ -33,7 +33,11 @@ Always run `show options` — names vary (`rhost` on some older bases).
 
 ## SNMP / HTTP
 
-See module list in [../ANEXO-INDICE-MODULOS.md](../ANEXO-INDICE-MODULOS.md).
+- `creds/generic/http_basic_digest_default` / `http_basic_digest_bruteforce`
+- `creds/generic/http_multi_auth_default` — multiple auth modes including form
+- `creds/generic/http_web_form_bruteforce` — web login dictionary attack with Hydra-style success/failure rules (`show options`)
+
+See full paths in [../ANEXO-INDICE-MODULOS.md](../ANEXO-INDICE-MODULOS.md).
 
 ## `setg` example
 
