@@ -9,6 +9,7 @@ import ast
 import json
 import logging
 import re
+import subprocess
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from pathlib import Path
@@ -16,6 +17,28 @@ from typing import Dict, List, Set, Tuple
 
 
 LOGGER = logging.getLogger("coverage_matrix")
+
+REPO_ROOT = Path(__file__).resolve().parent.parent
+
+
+def _generated_at_stamp(repo_root: Path) -> str:
+    """Return matrix timestamp; prefer git commit time for reproducible CI/local diffs."""
+    try:
+        completed = subprocess.run(
+            ["git", "log", "-1", "--format=%cI"],
+            cwd=str(repo_root),
+            capture_output=True,
+            text=True,
+            timeout=8,
+            check=False,
+        )
+        stamp = (completed.stdout or "").strip()
+        if completed.returncode == 0 and stamp:
+            return stamp
+    except (OSError, subprocess.TimeoutExpired):
+        pass
+    return datetime.now(timezone.utc).isoformat()
+
 
 RE_CVE = re.compile(r"CVE-\d{4}-\d{4,7}", re.IGNORECASE)
 DISABLED_DOMAINS: Tuple[str, ...] = ("cameras", "printers", "dvr", "dvrs")
@@ -828,7 +851,7 @@ def _build_summary(records: List[ModuleRecord], matrix: Dict[Tuple[str, str], Co
     lines: List[str] = [
         "## Global Capability Summary",
         "",
-        f"- Generated at: {datetime.now(timezone.utc).isoformat()}",
+        f"- Generated at: {_generated_at_stamp(REPO_ROOT)}",
         f"- Total modules indexed: {len(records)}",
         f"- Distinct vendor/product entries: {len(matrix)}",
         f"- Distinct CVEs mapped in modules: {len(cves)}",
