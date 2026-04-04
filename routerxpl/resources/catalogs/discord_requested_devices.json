@@ -1,0 +1,77 @@
+{
+  "notes": "Devices, vendors and models explicitly requested or discussed in Discord feedback.",
+  "entries": [
+    {
+      "source": "discord",
+      "vendor": "TP-Link",
+      "model": "AC1700",
+      "segment": "router",
+      "context": "user asked applicability to TP-Link AC1700",
+      "match_keywords": ["ac1700", "tplink", "tp-link"]
+    },
+    {
+      "source": "discord",
+      "vendor": "TP-Link",
+      "model": "AC1750",
+      "segment": "router",
+      "context": "home setup mention, landlord-provided router",
+      "match_keywords": ["ac1750", "tplink", "tp-link", "archer c7"]
+    },
+    {
+      "source": "discord",
+      "vendor": "Rogers/Shaw",
+      "model": "XB7 (Gen2)",
+      "segment": "isp-cpe/modem-router",
+      "context": "customer modem in bridged / passthrough chain",
+      "match_keywords": ["xb7", "rogers", "shaw", "comcast"]
+    },
+    {
+      "source": "discord",
+      "vendor": "Hitron",
+      "model": "CGNM-2250",
+      "segment": "isp-cpe/modem-router",
+      "context": "IP passthrough discussion and attack surface concerns",
+      "match_keywords": ["hitron", "cgnm-2250", "cgnm2250"]
+    },
+    {
+      "source": "discord",
+      "vendor": "AT&T / Pace",
+      "model": "5268AC",
+      "segment": "isp-cpe/gateway",
+      "context": "explicit pentest request in conversation",
+      "match_keywords": ["pace", "5268ac", "att", "at&t", "uverse", "u-verse"]
+    },
+    {
+      "source": "discord",
+      "vendor": "ADB / Pirelli",
+      "model": "PRG EAV4202N / PRGAV4202N",
+      "segment": "dsl-gateway",
+      "context": "default WPA algorithm weakness discussion",
+      "match_keywords": ["prg", "eav4202n", "prgav4202n", "pirelli", "adb"]
+    },
+    {
+      "source": "discord",
+      "vendor": "Technicolor",
+      "model": "TG585v6",
+      "segment": "dsl-gateway",
+      "context": "legacy vulnerable fleet mentioned in thread",
+      "match_keywords": ["tg585v6", "technicolor", "thomson"]
+    },
+    {
+      "source": "discord",
+      "vendor": "EasyBox",
+      "model": "EasyBox (German variants)",
+      "segment": "dsl-gateway",
+      "context": "algorithm request in discussion comments",
+      "match_keywords": ["easybox", "vodafone easybox"]
+    },
+    {
+      "source": "discord",
+      "vendor": "Generic",
+      "model": "Low-cost Chinese ONU/CPE",
+      "segment": "onu/isp-cpe",
+      "context": "claim that modern cheap ONUs are not covered",
+      "match_keywords": ["onu", "gpon", "xpon", "ont", "cpe"]
+    }
+  ]
+}

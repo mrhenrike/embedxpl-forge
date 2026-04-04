@@ -1,0 +1,7 @@
+requests==2.32.4
+paramiko
+pysnmp
+pycryptodome
+scapy
+setuptools
+telnetlib3; python_version >= "3.13"
