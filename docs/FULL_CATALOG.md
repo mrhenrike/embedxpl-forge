@@ -1,6 +1,6 @@
 # RouterXPL-Forge — Full Module Catalog
 
-> Generated: 2026-04-04T03:07:52.290832+00:00
+> Generated: 2026-04-04T03:24:07.813353+00:00
 > Author: Andre Henrique (@mrhenrike) | Uniao Geek
 
 ## Summary
@@ -10,10 +10,10 @@
 | Exploits | 129 |
 | Credential Modules | 96 |
 | Scanners | 5 |
-| Generic Modules | 16 |
+| Generic Modules | 20 |
 | Encoders | 13 |
 | Payloads | 32 |
-| **Total Modules** | **291** |
+| **Total Modules** | **295** |
 | Distinct CVEs | 32 |
 
 ---
@@ -1357,7 +1357,7 @@
    - Module that scans for routers vulnerablities and weaknesses.
    - Devices: Router
 
-## Generic Modules (16)
+## Generic Modules (20)
 
 ### bluetooth (3)
 
@@ -1380,70 +1380,92 @@
    - Queries the embedded CVE database for known vulnerabilities matching a target's vendor, product, version or raw banner. Classifies each CVE as REMOTE (exploitable by rxf), LOCAL or PHYSICAL. Lists ava
    - Devices: Any — database covers routers, switches, firewalls, NGFW in scope
 
+### external (4)
+
+5. **Metasploit Console Bridge**
+   - Path: `generic/external/metasploit_console_bridge.py`
+   - Invokes local msfconsole with 'use <module>; setg RHOSTS; …; check|run'. MSF modules and license remain under Rapid7/BSD at your install path — this module only orchestrates the CLI. Not legal advice:
+   - Devices: Any (depends on chosen Metasploit module)
+
+6. **Metasploit Ruby Module Metadata (read-only)**
+   - Path: `generic/external/metasploit_rb_inspect.py`
+   - Loads a .rb path from your Metasploit tree and prints Name/Author/References heuristics. Does not run Ruby or MSF; original file is not modified. Credit remains with module authors and Rapid7 license.
+   - Devices: Documentation
+
+7. **MikrotikAPI-BF Bridge**
+   - Path: `generic/external/mikrotikapi_bf_bridge.py`
+   - Runs MikrotikAPI-BF (https://github.com/mrhenrike/MikrotikAPI-BF) via subprocess. Set script_path to your repo's mikrotikapi-bf.py or leave empty to use PATH (mikrotikapi-bf).
+   - Devices: MikroTik RouterOS
+
+8. **Searchsploit Bridge**
+   - Path: `generic/external/searchsploit_bridge.py`
+   - Runs `searchsploit` against a term (optional JSON). Requires Exploit-DB package on host. Respect GPLv2 and upstream attribution for databases and scripts.
+   - Devices: Research / catalog
+
 ### pcap (9)
 
-5. **PCAP AP & Station Mapper**
+9. **PCAP AP & Station Mapper**
    - Path: `generic/pcap/pcap_ap_station_mapper.py`
    - Offline analysis of PCAP/PCAPNG captures to enumerate access points (BSSID, SSID, channel, encryption) and client stations (probed SSIDs, associated BSSID, data frames). Useful after wardriving captur
    - Devices: Any 802.11 wireless capture
 
-6. **PCAP Offline Credential Sniffer**
+10. **PCAP Offline Credential Sniffer**
    - Path: `generic/pcap/pcap_credential_sniffer.py`
    - Offline extraction of cleartext credentials from PCAP/PCAPNG captures. Detects HTTP Basic/Form auth, FTP USER/PASS, Telnet logins and SNMP community strings.
    - Devices: Any network capture with cleartext protocols
 
-7. **PCAP Offline EAP/WPE Credential Harvester**
+11. **PCAP Offline EAP/WPE Credential Harvester**
    - Path: `generic/pcap/pcap_wpe_harvest.py`
    - Extracts EAP identities and challenge-response pairs from 802.1X authentication captures (WPA-Enterprise). Supports EAP-MD5, LEAP, MSCHAPv2, PEAP, EAP-TTLS, EAP-FAST. Produces hashcat-ready hashes for
    - Devices: Any WPA-Enterprise / 802.1X network capture
 
-8. **PCAP Offline PMKID Attack (WPA/WPA2 Clientless)**
+12. **PCAP Offline PMKID Attack (WPA/WPA2 Clientless)**
    - Path: `generic/pcap/pcap_pmkid_attack.py`
    - Extracts PMKID from EAPOL message 1 for clientless WPA/WPA2 offline attacks. No full 4-way handshake required. Outputs hashcat mode 22000 format and optionally runs hashcat.
    - Devices: Any WPA/WPA2-PSK network (most modern APs include PMKID)
 
-9. **PCAP Offline TKIP/Michael Attack Analysis**
+13. **PCAP Offline TKIP/Michael Attack Analysis**
    - Path: `generic/pcap/pcap_tkip_downgrade.py`
    - Analyzes PCAP captures for TKIP vulnerabilities including Beck-Tews (QoS injection), Ohigashi-Morii (man-in-the-middle), and ChopChop (frame decryption) attack feasibility. Detects MIC failure deauths
    - Devices: Any WPA-TKIP or WPA2-TKIP mixed-mode network capture
 
-10. **PCAP Offline WEP Key Recovery**
+14. **PCAP Offline WEP Key Recovery**
    - Path: `generic/pcap/pcap_wep_crack.py`
    - Extracts WEP IVs from PCAP captures and runs offline statistical key recovery using aircrack-ng (FMS/PTW/KoreK). Reports IV counts, weak IV statistics and crackability assessment.
    - Devices: Any WEP-encrypted 802.11 network capture
 
-11. **PCAP Offline WPA/WPA2 Dictionary Attack**
+15. **PCAP Offline WPA/WPA2 Dictionary Attack**
    - Path: `generic/pcap/pcap_offline_wpa_crack.py`
    - Runs an offline dictionary attack against WPA/WPA2 handshakes captured in PCAP files. Supports aircrack-ng (default) and hashcat. Requires a wordlist and a capture file with a valid handshake.
    - Devices: Any WPA/WPA2 PSK network (captured handshake required)
 
-12. **PCAP Offline WPA3 Dragonblood Analysis**
+16. **PCAP Offline WPA3 Dragonblood Analysis**
    - Path: `generic/pcap/pcap_dragonblood.py`
    - Analyzes WPA3 SAE (Dragonfly) handshakes in PCAP captures for Dragonblood vulnerabilities: CVE-2019-9494 (timing side-channel), CVE-2019-9496 (transition mode downgrade), weak group detection, and cac
    - CVEs: CVE-2019-9494, CVE-2019-9496
    - Devices: Any WPA3-SAE or WPA3-Transition mode network capture
 
-13. **PCAP WPA/WPA2 Handshake Extractor**
+17. **PCAP WPA/WPA2 Handshake Extractor**
    - Path: `generic/pcap/pcap_handshake_extractor.py`
    - Offline extraction of EAPOL 4-way handshakes from PCAP/PCAPNG captures. Exports usable handshakes to individual PCAP files ready for cracking with aircrack-ng or hashcat.
    - Devices: Any 802.11 WPA/WPA2 wireless capture
 
 ### snmp (1)
 
-14. **SNMP Trap Listener**
+18. **SNMP Trap Listener**
    - Path: `generic/snmp/snmp_trap_listener.py`
    - Operational validation module for SNMP trap reception over UDP.
    - Devices: Routers, Switches, TAPs, FW, NGFW
 
 ### upnp (1)
 
-15. **SSDP M-SEARCH Info Discovery**
+19. **SSDP M-SEARCH Info Discovery**
    - Path: `generic/upnp/ssdp_msearch.py`
    - Sends M-SEARCH request to target and retrieve information from UPnP enabled systems.
 
 ### wordlist (1)
 
-16. **Interactive Wordlist Generator**
+20. **Interactive Wordlist Generator**
    - Path: `generic/wordlist/wordlist_generator.py`
    - Generates custom password and username wordlists based on target profile (corporate or personal). Applies mutation rules (leet speak, case variations, number suffixes, date fragments, word combination
    - Devices: Any target — wordlist generation is target-independent

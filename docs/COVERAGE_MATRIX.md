@@ -18,9 +18,9 @@
 
 ## Global Capability Summary
 
-- Module tree (routerxpl/modules): af6f631f7851139ab5d8f140e4d2c1d8d072fd3d
-- Total modules indexed: 291
-- Distinct vendor/product entries: 291
+- Module tree (routerxpl/modules): 6f7801faf88f0ac14cfd0966965322013bef5319
+- Total modules indexed: 295
+- Distinct vendor/product entries: 295
 - Distinct CVEs mapped in modules: 32
 - Attack classes identified: auth_bypass, backdoor, creds_disclosure, dns_change, info_disclosure, password_reset_or_change, path_traversal, rce
 
@@ -28,7 +28,7 @@
 - creds: 96
 - encoders: 13
 - exploits: 129
-- generic: 16
+- generic: 20
 - payloads: 32
 - scanners: 5
 
@@ -98,7 +98,7 @@
 | L5-L7 | Application | Session/Presentation/Application | ssh | 32 | yes | default_credential_and_bruteforce_paths, auth_bypass_and_session_abuse, protocol_parser_and_input_injection_paths, management_api_and_header_abuse, snmp_read_write_and_trap_plane_misuse | credential_validation_matrix, auth_method_coverage_checks, protocol_specific_exploitability_checks, snmpv2_snmpv3_trap_operational_validation, api_and_web_management_flow_validation | P1 | P1 | P1 |
 | L5-L7 | Application | Session/Presentation/Application | telnet | 30 | yes | default_credential_and_bruteforce_paths, auth_bypass_and_session_abuse, protocol_parser_and_input_injection_paths, management_api_and_header_abuse, snmp_read_write_and_trap_plane_misuse | credential_validation_matrix, auth_method_coverage_checks, protocol_specific_exploitability_checks, snmpv2_snmpv3_trap_operational_validation, api_and_web_management_flow_validation | P2 | P3 | P2 |
 | L5-L7 | Application | Session/Presentation/Application | ftp_ftps_sftp | 32 | yes | default_credential_and_bruteforce_paths, auth_bypass_and_session_abuse, protocol_parser_and_input_injection_paths, management_api_and_header_abuse, snmp_read_write_and_trap_plane_misuse | credential_validation_matrix, auth_method_coverage_checks, protocol_specific_exploitability_checks, snmpv2_snmpv3_trap_operational_validation, api_and_web_management_flow_validation | P2 | P2 | P2 |
-| L5-L7 | Application | Session/Presentation/Application | http_https_api | 11 | yes | default_credential_and_bruteforce_paths, auth_bypass_and_session_abuse, protocol_parser_and_input_injection_paths, management_api_and_header_abuse, snmp_read_write_and_trap_plane_misuse | credential_validation_matrix, auth_method_coverage_checks, protocol_specific_exploitability_checks, snmpv2_snmpv3_trap_operational_validation, api_and_web_management_flow_validation | P1 | P1 | P1 |
+| L5-L7 | Application | Session/Presentation/Application | http_https_api | 14 | yes | default_credential_and_bruteforce_paths, auth_bypass_and_session_abuse, protocol_parser_and_input_injection_paths, management_api_and_header_abuse, snmp_read_write_and_trap_plane_misuse | credential_validation_matrix, auth_method_coverage_checks, protocol_specific_exploitability_checks, snmpv2_snmpv3_trap_operational_validation, api_and_web_management_flow_validation | P1 | P1 | P1 |
 | L5-L7 | Application | Session/Presentation/Application | radius_tacacs | 0 | no | default_credential_and_bruteforce_paths, auth_bypass_and_session_abuse, protocol_parser_and_input_injection_paths, management_api_and_header_abuse, snmp_read_write_and_trap_plane_misuse | credential_validation_matrix, auth_method_coverage_checks, protocol_specific_exploitability_checks, snmpv2_snmpv3_trap_operational_validation, api_and_web_management_flow_validation | P3 | P2 | P3 |
 | L5-L7 | Application | Session/Presentation/Application | tr069_cwmp | 1 | yes | default_credential_and_bruteforce_paths, auth_bypass_and_session_abuse, protocol_parser_and_input_injection_paths, management_api_and_header_abuse, snmp_read_write_and_trap_plane_misuse | credential_validation_matrix, auth_method_coverage_checks, protocol_specific_exploitability_checks, snmpv2_snmpv3_trap_operational_validation, api_and_web_management_flow_validation | P2 | P3 | P3 |
 | L5-L7 | Application | Session/Presentation/Application | syslog | 0 | no | default_credential_and_bruteforce_paths, auth_bypass_and_session_abuse, protocol_parser_and_input_injection_paths, management_api_and_header_abuse, snmp_read_write_and_trap_plane_misuse | credential_validation_matrix, auth_method_coverage_checks, protocol_specific_exploitability_checks, snmpv2_snmpv3_trap_operational_validation, api_and_web_management_flow_validation | P2 | P1 | P2 |
@@ -117,7 +117,7 @@
 | L2 Data Link | 16 |
 | L3 Network | 0 |
 | L4 Transport | 37 |
-| L5-L7 Session/Presentation/Application | 116 |
+| L5-L7 Session/Presentation/Application | 119 |
 
 ## Market Priority Coverage (2010-2026)
 
@@ -928,6 +928,9 @@
 | routerpwn-github-mirror | hkm/routerpwn.com (static mirror / offline bundle) | source-mirror | router-soho | high | queued_for_analysis | tracked | https://github.com/hkm/routerpwn.com |
 | exploit-db-hardware-search | Exploit-DB — hardware / router vendor search | exploit-index | router-switch-fw | conditional | reference | tracked | https://www.exploit-db.com/ |
 | intelbras-vuln-checker-gist | Community Intelbras router vuln checklist (gist) | research-index | router-br | conditional | queued_for_curation | tracked | https://gist.github.com/MrCl0wnLab/2c325380cff786e0e1556c1fc8306098 |
+| metasploit-framework-github | Metasploit Framework (Rapid7) — upstream source | exploit-framework | orchestration-bridge | high | adapter-module | tracked | https://github.com/rapid7/metasploit-framework |
+| exploitdb-gitlab | Exploit-DB / searchsploit (OffSec) — upstream | exploit-database | research-cli | high | adapter-module | tracked | https://gitlab.com/exploit-database/exploitdb |
+| mikrotikapi-bf-github | MikrotikAPI-BF — RouterOS toolkit (author) | vendor-toolkit | mikrotik-routeros | high | adapter-module | tracked | https://github.com/mrhenrike/MikrotikAPI-BF |
 | bitbucket-router-research | Bitbucket search — router / firmware / exploit keywords | discovery-hint | router-soho | low | reference | tracked | https://bitbucket.org/search?q=router |
 
 ## Discord Requested Devices Coverage
@@ -953,7 +956,7 @@
 
 | Domain | Count |
 |---|---:|
-| catalogs | 11 |
+| catalogs | 12 |
 | wordlists | 10 |
 | ssh_keys | 8 |
 | vendors datasets | 2 |
@@ -961,7 +964,7 @@
 | modules.exploits | 129 |
 | modules.creds | 96 |
 | modules.scanners | 5 |
-| modules.generic | 16 |
+| modules.generic | 20 |
 | modules.encoders | 13 |
 | modules.payloads | 32 |
 
@@ -1124,6 +1127,10 @@
 | dlink | multi_hnap_rce | 1 | 1 | 0 | 0 | 0 | 0 | 0 | - | rce |
 | dlink | ssh_default_creds | 1 | 0 | 1 | 0 | 0 | 0 | 0 | - | - |
 | dlink | telnet_default_creds | 1 | 0 | 1 | 0 | 0 | 0 | 0 | - | - |
+| external | metasploit_console_bridge | 1 | 0 | 0 | 0 | 1 | 0 | 0 | - | - |
+| external | metasploit_rb_inspect | 1 | 0 | 0 | 0 | 1 | 0 | 0 | - | - |
+| external | mikrotikapi_bf_bridge | 1 | 0 | 0 | 0 | 1 | 0 | 0 | - | - |
+| external | searchsploit_bridge | 1 | 0 | 0 | 0 | 1 | 0 | 0 | - | - |
 | fortinet | fortigate_os_backdoor | 1 | 1 | 0 | 0 | 0 | 0 | 0 | - | backdoor |
 | fortinet | ftp_default_creds | 1 | 0 | 1 | 0 | 0 | 0 | 0 | - | - |
 | fortinet | ssh_default_creds | 1 | 0 | 1 | 0 | 0 | 0 | 0 | - | - |
@@ -2194,6 +2201,38 @@
 - Attack classes: none
 - Module paths:
   - `modules/creds/routers/dlink/telnet_default_creds.py`
+
+### external / metasploit_console_bridge
+
+- Totals: modules=1, exploits=0, creds=0, scanners=0, generic=1, payloads=0, encoders=0
+- CVEs: none
+- Attack classes: none
+- Module paths:
+  - `modules/generic/external/metasploit_console_bridge.py`
+
+### external / metasploit_rb_inspect
+
+- Totals: modules=1, exploits=0, creds=0, scanners=0, generic=1, payloads=0, encoders=0
+- CVEs: none
+- Attack classes: none
+- Module paths:
+  - `modules/generic/external/metasploit_rb_inspect.py`
+
+### external / mikrotikapi_bf_bridge
+
+- Totals: modules=1, exploits=0, creds=0, scanners=0, generic=1, payloads=0, encoders=0
+- CVEs: none
+- Attack classes: none
+- Module paths:
+  - `modules/generic/external/mikrotikapi_bf_bridge.py`
+
+### external / searchsploit_bridge
+
+- Totals: modules=1, exploits=0, creds=0, scanners=0, generic=1, payloads=0, encoders=0
+- CVEs: none
+- Attack classes: none
+- Module paths:
+  - `modules/generic/external/searchsploit_bridge.py`
 
 ### fortinet / fortigate_os_backdoor
 

@@ -10,7 +10,8 @@
 | `module_target_scope.json` | Política de escopo e mapeamento *device class* para AutoPwn |
 | `cve_extended_catalog.json` | Extensão alimentando `CVEDatabase` |
 | `discord_requested_devices.json` | Pedidos da comunidade / Discord |
-| `external_tool_intel_sources.json` | Fontes externas para roadmap (RouterPwn, EDB, …) |
+| `external_tool_intel_sources.json` | Fontes externas para roadmap (RouterPwn, EDB, Metasploit, …) |
+| `external_framework_clones.json` | URLs oficiais para clonar Metasploit / Exploit-DB / MikrotikAPI-BF (licenças e pontes `generic/external/*`) |
 | `deep_intel_backlog.json` | Itens de intel pendentes de triagem |
 
 ## Diagramas de arquitetura

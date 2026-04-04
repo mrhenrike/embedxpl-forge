@@ -10,7 +10,8 @@
 | `module_target_scope.json` | AutoPwn scope policy |
 | `cve_extended_catalog.json` | CVE DB extension |
 | `discord_requested_devices.json` | Community requests |
-| `external_tool_intel_sources.json` | External intel URLs |
+| `external_tool_intel_sources.json` | External intel URLs (incl. MSF / Exploit-DB bridges) |
+| `external_framework_clones.json` | Curated official clone URLs + license notes; pairs with `generic/external/*` bridges |
 | `deep_intel_backlog.json` | Intel backlog items |
 
 ## Architecture diagrams
