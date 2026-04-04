@@ -89,14 +89,6 @@ jobs:
         run: |
           python tools/validate_governance.py
 
-      - name: Build deep intel backlog snapshot
-        run: |
-          python tools/deep_intel_backlog.py
-
-      - name: Build phase6b honeypot campaign snapshot
-        run: |
-          python tools/phase6b_honeypot_validation.py
-
       - name: Build OSI/TCP-IP attack-test matrix snapshot
         run: |
           python tools/build_osi_tcpip_attack_matrix.py
@@ -121,6 +113,11 @@ jobs:
       - name: Static security review (bandit)
         run: |
           bandit -q -r tools -lll
+
+      - name: Refresh deep intel and honeypot snapshots (non-gating)
+        run: |
+          python tools/deep_intel_backlog.py
+          python tools/phase6b_honeypot_validation.py
 
   dependency-review:
     name: "dependency-review / pull_request"
