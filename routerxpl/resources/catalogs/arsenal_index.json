@@ -23,12 +23,15 @@
     "cve_extended_catalog.json",
     "deep_intel_backlog.json",
     "discord_requested_devices.json",
+    "embedded_third_party_poc_intel.json",
     "external_framework_clones.json",
     "external_tool_intel_sources.json",
     "market_priority_devices_2010_2026.json",
     "module_target_scope.json",
     "osi_tcpip_priority_matrix.json",
     "post2018_network_devices.json",
+    "third_party_router_exploit_repos.json",
+    "third_party_upstream_open_work.json",
     "workspace_reuse_inventory.json"
   ],
   "wordlists": [
