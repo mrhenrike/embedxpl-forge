@@ -1,5 +1,5 @@
 {
-  "total": 15,
+  "total": 18,
   "items": [
     {
       "id": "discord-001",
@@ -180,6 +180,42 @@
       "keyword_hits": "0",
       "status": "pending_analysis",
       "notes": "source_type=vendor-context reachable=True"
+    },
+    {
+      "id": "routerpwn-archive-triage",
+      "origin": "market_priority_gap_scan",
+      "name": "RouterPWN live + Wayback + GitHub mirror — curated porting backlog",
+      "domain": "router-soho",
+      "url": "https://web.archive.org/web/*/http://routerpwn.com/",
+      "priority": "p1",
+      "recommended_action": "map_vendor_pages_to_module_candidates",
+      "keyword_hits": "0",
+      "status": "pending_analysis",
+      "notes": "Cross-link entries with market_priority_gaps.csv uncovered rows; lab-validate before shipping payloads."
+    },
+    {
+      "id": "intelbras-public-poc-index",
+      "origin": "market_priority_gap_scan",
+      "name": "Intelbras routers/switches — EDB + gist index to CVE/module mapping",
+      "domain": "router-switch-br",
+      "url": "https://gist.github.com/MrCl0wnLab/2c325380cff786e0e1556c1fc8306098",
+      "priority": "p1",
+      "recommended_action": "cve_crosswalk_and_scanner_modules",
+      "keyword_hits": "0",
+      "status": "pending_analysis",
+      "notes": "device_pool has Intelbras SKUs with no routerxpl/vendor path hit; validate CVE-2019-19516, RF301K cfg leak, etc. against firmware."
+    },
+    {
+      "id": "mercusys-soho-gap",
+      "origin": "market_priority_gap_scan",
+      "name": "Mercusys MR60X/MR80X/MS105G — no dedicated vendor modules",
+      "domain": "router-soho",
+      "url": "https://www.exploit-db.com/search?q=mercusys",
+      "priority": "p2",
+      "recommended_action": "generic_http_plus_brand_fingerprint",
+      "keyword_hits": "0",
+      "status": "pending_analysis",
+      "notes": "Often Mediatek/Realtek OEM; consider generic modules + banner correlation."
     }
   ]
 }

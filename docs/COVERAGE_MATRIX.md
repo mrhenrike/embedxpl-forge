@@ -19,13 +19,13 @@
 ## Global Capability Summary
 
 - Module tree (routerxpl/modules): af6f631f7851139ab5d8f140e4d2c1d8d072fd3d
-- Total modules indexed: 290
-- Distinct vendor/product entries: 290
+- Total modules indexed: 291
+- Distinct vendor/product entries: 291
 - Distinct CVEs mapped in modules: 32
 - Attack classes identified: auth_bypass, backdoor, creds_disclosure, dns_change, info_disclosure, password_reset_or_change, path_traversal, rce
 
 ### Module Type Counts
-- creds: 95
+- creds: 96
 - encoders: 13
 - exploits: 129
 - generic: 16
@@ -98,7 +98,7 @@
 | L5-L7 | Application | Session/Presentation/Application | ssh | 32 | yes | default_credential_and_bruteforce_paths, auth_bypass_and_session_abuse, protocol_parser_and_input_injection_paths, management_api_and_header_abuse, snmp_read_write_and_trap_plane_misuse | credential_validation_matrix, auth_method_coverage_checks, protocol_specific_exploitability_checks, snmpv2_snmpv3_trap_operational_validation, api_and_web_management_flow_validation | P1 | P1 | P1 |
 | L5-L7 | Application | Session/Presentation/Application | telnet | 30 | yes | default_credential_and_bruteforce_paths, auth_bypass_and_session_abuse, protocol_parser_and_input_injection_paths, management_api_and_header_abuse, snmp_read_write_and_trap_plane_misuse | credential_validation_matrix, auth_method_coverage_checks, protocol_specific_exploitability_checks, snmpv2_snmpv3_trap_operational_validation, api_and_web_management_flow_validation | P2 | P3 | P2 |
 | L5-L7 | Application | Session/Presentation/Application | ftp_ftps_sftp | 32 | yes | default_credential_and_bruteforce_paths, auth_bypass_and_session_abuse, protocol_parser_and_input_injection_paths, management_api_and_header_abuse, snmp_read_write_and_trap_plane_misuse | credential_validation_matrix, auth_method_coverage_checks, protocol_specific_exploitability_checks, snmpv2_snmpv3_trap_operational_validation, api_and_web_management_flow_validation | P2 | P2 | P2 |
-| L5-L7 | Application | Session/Presentation/Application | http_https_api | 10 | yes | default_credential_and_bruteforce_paths, auth_bypass_and_session_abuse, protocol_parser_and_input_injection_paths, management_api_and_header_abuse, snmp_read_write_and_trap_plane_misuse | credential_validation_matrix, auth_method_coverage_checks, protocol_specific_exploitability_checks, snmpv2_snmpv3_trap_operational_validation, api_and_web_management_flow_validation | P1 | P1 | P1 |
+| L5-L7 | Application | Session/Presentation/Application | http_https_api | 11 | yes | default_credential_and_bruteforce_paths, auth_bypass_and_session_abuse, protocol_parser_and_input_injection_paths, management_api_and_header_abuse, snmp_read_write_and_trap_plane_misuse | credential_validation_matrix, auth_method_coverage_checks, protocol_specific_exploitability_checks, snmpv2_snmpv3_trap_operational_validation, api_and_web_management_flow_validation | P1 | P1 | P1 |
 | L5-L7 | Application | Session/Presentation/Application | radius_tacacs | 0 | no | default_credential_and_bruteforce_paths, auth_bypass_and_session_abuse, protocol_parser_and_input_injection_paths, management_api_and_header_abuse, snmp_read_write_and_trap_plane_misuse | credential_validation_matrix, auth_method_coverage_checks, protocol_specific_exploitability_checks, snmpv2_snmpv3_trap_operational_validation, api_and_web_management_flow_validation | P3 | P2 | P3 |
 | L5-L7 | Application | Session/Presentation/Application | tr069_cwmp | 1 | yes | default_credential_and_bruteforce_paths, auth_bypass_and_session_abuse, protocol_parser_and_input_injection_paths, management_api_and_header_abuse, snmp_read_write_and_trap_plane_misuse | credential_validation_matrix, auth_method_coverage_checks, protocol_specific_exploitability_checks, snmpv2_snmpv3_trap_operational_validation, api_and_web_management_flow_validation | P2 | P3 | P3 |
 | L5-L7 | Application | Session/Presentation/Application | syslog | 0 | no | default_credential_and_bruteforce_paths, auth_bypass_and_session_abuse, protocol_parser_and_input_injection_paths, management_api_and_header_abuse, snmp_read_write_and_trap_plane_misuse | credential_validation_matrix, auth_method_coverage_checks, protocol_specific_exploitability_checks, snmpv2_snmpv3_trap_operational_validation, api_and_web_management_flow_validation | P2 | P1 | P2 |
@@ -117,7 +117,7 @@
 | L2 Data Link | 16 |
 | L3 Network | 0 |
 | L4 Transport | 37 |
-| L5-L7 Session/Presentation/Application | 115 |
+| L5-L7 Session/Presentation/Application | 116 |
 
 ## Market Priority Coverage (2010-2026)
 
@@ -923,6 +923,12 @@
 | devttys0-repos | devttys0 repositories index | firmware-research-index | firmware-toolchain | high | planned-curation | tracked | https://github.com/devttys0?tab=repositories |
 | devttys0-delink | DeLink firmware decryption library | firmware-tool | dlink-firmware-decryption | high | planned-adapter | tracked | https://github.com/devttys0/delink |
 | threat9-main | THREAT9 official site | vendor-context | project-context | reference | reference | tracked | https://threat9.com/ |
+| routerpwn-site | RouterPWN (SOHO router exploits, generators, advisories) | exploit-index | router-soho | high | queued_for_curation | tracked | https://routerpwn.com/ |
+| routerpwn-wayback | RouterPWN — Internet Archive (Wayback) catch-all | exploit-index-archive | router-soho | high | queued_for_curation | tracked | https://web.archive.org/web/*/http://routerpwn.com/ |
+| routerpwn-github-mirror | hkm/routerpwn.com (static mirror / offline bundle) | source-mirror | router-soho | high | queued_for_analysis | tracked | https://github.com/hkm/routerpwn.com |
+| exploit-db-hardware-search | Exploit-DB — hardware / router vendor search | exploit-index | router-switch-fw | conditional | reference | tracked | https://www.exploit-db.com/ |
+| intelbras-vuln-checker-gist | Community Intelbras router vuln checklist (gist) | research-index | router-br | conditional | queued_for_curation | tracked | https://gist.github.com/MrCl0wnLab/2c325380cff786e0e1556c1fc8306098 |
+| bitbucket-router-research | Bitbucket search — router / firmware / exploit keywords | discovery-hint | router-soho | low | reference | tracked | https://bitbucket.org/search?q=router |
 
 ## Discord Requested Devices Coverage
 
@@ -947,13 +953,13 @@
 
 | Domain | Count |
 |---|---:|
-| catalogs | 10 |
+| catalogs | 11 |
 | wordlists | 10 |
 | ssh_keys | 8 |
 | vendors datasets | 2 |
 | mibs | 1758 |
 | modules.exploits | 129 |
-| modules.creds | 95 |
+| modules.creds | 96 |
 | modules.scanners | 5 |
 | modules.generic | 16 |
 | modules.encoders | 13 |
@@ -981,13 +987,13 @@
 
 ## Deep Intel Backlog Snapshot
 
-- Total backlog items: 15
+- Total backlog items: 18
 - Total keyword hits across backlog: 125
 
 | Priority | Count |
 |---|---:|
-| p1 | 12 |
-| p2 | 2 |
+| p1 | 14 |
+| p2 | 3 |
 | p3 | 1 |
 
 ## Honeypot Final Validation Snapshot
@@ -1130,8 +1136,9 @@
 | hootoo | tripmate_sysfirm_rce | 1 | 1 | 0 | 0 | 0 | 0 | 0 | - | rce |
 | http_basic_digest_bruteforce.py | http_basic_digest_bruteforce | 1 | 0 | 1 | 0 | 0 | 0 | 0 | - | - |
 | http_basic_digest_default.py | http_basic_digest_default | 1 | 0 | 1 | 0 | 0 | 0 | 0 | - | - |
-| http_form_char_by_char_oracle.py | http_form_char_by_char_oracle | 1 | 1 | 0 | 0 | 0 | 0 | 0 | - | - |
+| http_form_char_by_char_oracle.py | http_form_char_by_char_oracle | 1 | 1 | 0 | 0 | 0 | 0 | 0 | - | info_disclosure |
 | http_multi_auth_default.py | http_multi_auth_default | 1 | 0 | 1 | 0 | 0 | 0 | 0 | - | - |
+| http_web_form_bruteforce.py | http_web_form_bruteforce | 1 | 0 | 1 | 0 | 0 | 0 | 0 | - | - |
 | huawei | e5331_mifi_info_disclosure | 1 | 1 | 0 | 0 | 0 | 0 | 0 | - | info_disclosure |
 | huawei | ftp_default_creds | 1 | 0 | 1 | 0 | 0 | 0 | 0 | - | - |
 | huawei | hg520_info_disclosure | 1 | 1 | 0 | 0 | 0 | 0 | 0 | - | info_disclosure |
@@ -2288,7 +2295,7 @@
 
 - Totals: modules=1, exploits=1, creds=0, scanners=0, generic=0, payloads=0, encoders=0
 - CVEs: none
-- Attack classes: none
+- Attack classes: info_disclosure
 - Module paths:
   - `modules/exploits/generic/http_form_char_by_char_oracle.py`
 
@@ -2299,6 +2306,14 @@
 - Attack classes: none
 - Module paths:
   - `modules/creds/generic/http_multi_auth_default.py`
+
+### http_web_form_bruteforce.py / http_web_form_bruteforce
+
+- Totals: modules=1, exploits=0, creds=1, scanners=0, generic=0, payloads=0, encoders=0
+- CVEs: none
+- Attack classes: none
+- Module paths:
+  - `modules/creds/generic/http_web_form_bruteforce.py`
 
 ### huawei / e5331_mifi_info_disclosure
 

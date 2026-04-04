@@ -4,6 +4,12 @@ from concurrent.futures import ThreadPoolExecutor, TimeoutError
 
 from routerxpl.core.exploit import *
 from routerxpl.core.exploit.exploit import Protocol
+from routerxpl.core.exploit.module_target_scope import (
+    is_module_permitted_for_class,
+    normalize_target_class,
+)
+from routerxpl.core.ml.advisor import AttackAdvisor, advisor_context_from_autopwn
+from routerxpl.core.ml.gpu import gpu_capability_summary
 
 
 class Exploit(Exploit):
@@ -49,6 +55,11 @@ class Exploit(Exploit):
     target = OptIP("", "Target IPv4 or IPv6 address")
 
     vendor = OptString("any", "Vendor concerned (default: any)")
+    target_device_class = OptString(
+        "multi",
+        "Target class filter: multi|router|switch|tap|fw|ngfw|isp_cpe (see resources/catalogs/module_target_scope.json)",
+        advanced=True,
+    )
     timing_template = OptString(
         "balanced",
         "Timing template: T0..T5 or paranoid/sneaky/polite/balanced/aggressive/insane",
@@ -91,6 +102,22 @@ class Exploit(Exploit):
     module_timeout_s = OptInteger(
         20,
         "Per-module timeout in seconds for check/check_default (0 disables timeout)",
+        advanced=True,
+    )
+
+    ml_advisor = OptBool(
+        False,
+        "Enable ML/heuristic advisor: prioritizes modules, suggests or applies timing (extra CPU/RAM: low for scoring; threads dominate)",
+        advanced=True,
+    )
+    ml_auto_timing = OptBool(
+        False,
+        "When ml_advisor true: overwrite timing_template with advisor suggestion (T0–T5)",
+        advanced=True,
+    )
+    ml_use_gpu = OptBool(
+        False,
+        "When ml_advisor true: run timing logits on PyTorch CUDA if installed (marginal; network checks stay I/O bound)",
         advanced=True,
     )
 
@@ -229,8 +256,24 @@ class Exploit(Exploit):
         self.vulnerabilities = []
         self.creds = []
         self.not_verified = []
+        self._scope_skipped = 0
         self._print_timing_help()
         self._configure_runtime_profile()
+
+        tcls = normalize_target_class(str(self.target_device_class))
+        if tcls == "tap":
+            print_info(
+                "\033[93m[!]\033[0m",
+                (
+                    "target_device_class=tap: passive TAPs usually have no in-scope management plane; "
+                    "most modules will be skipped. Use multi only for lab misconfiguration scenarios."
+                ),
+            )
+        elif tcls not in ("multi",):
+            print_info(
+                "\033[94m[*]\033[0m",
+                "Device class filter active: {} (modules outside module_target_scope.json rules are skipped)".format(tcls),
+            )
 
         # Update list of directories with specific vendor if needed
         if self.vendor != 'any':
@@ -246,6 +289,10 @@ class Exploit(Exploit):
                 for module in utils.iter_modules(directory):
                     modules.append(module)
 
+            if advisor is not None and advisor_ctx is not None:
+                modules = advisor.prioritize_modules(modules, advisor_ctx)
+                print_status("ML advisor reordered {} exploit modules (higher expected yield first).".format(len(modules)))
+
             data = LockedIterator(modules)
             self.run_threads(self.threads, self.exploits_target_function, data)
 
@@ -257,6 +304,10 @@ class Exploit(Exploit):
             for directory in self._creds_directories:
                 for module in utils.iter_modules(directory):
                     modules.append(module)
+
+            if advisor is not None and advisor_ctx is not None:
+                modules = advisor.prioritize_modules(modules, advisor_ctx)
+                print_status("ML advisor reordered {} credential modules (higher expected yield first).".format(len(modules)))
 
             data = LockedIterator(modules)
             self.run_threads(self.threads, self.creds_target_function, data)
@@ -298,7 +349,14 @@ class Exploit(Exploit):
                 ).format(self.target),
             )
 
+        if self._scope_skipped and tcls != "multi":
+            print_info(
+                "\033[94m[*]\033[0m",
+                "Skipped {} module(s) not permitted for target_device_class={}".format(self._scope_skipped, tcls),
+            )
+
     def exploits_target_function(self, running, data):
+        tcls = normalize_target_class(str(self.target_device_class))
         while running.is_set():
             try:
                 module = data.next()
@@ -310,6 +368,10 @@ class Exploit(Exploit):
                 continue
             else:
                 exploit.target = self.target
+
+                if not is_module_permitted_for_class(exploit.__module__, "exploits", tcls):
+                    self._scope_skipped += 1
+                    continue
 
                 # Avoid checking specific protocol - reduce network impact
                 if exploit.target_protocol == Protocol.HTTP:
@@ -401,10 +463,15 @@ class Exploit(Exploit):
                     self.not_verified.append((exploit.target, exploit.port, exploit.target_protocol, str(exploit)))
 
     def creds_target_function(self, running, data):
+        tcls = normalize_target_class(str(self.target_device_class))
         while running.is_set():
             try:
                 module = data.next()
                 exploit = module()
+
+                if not is_module_permitted_for_class(exploit.__module__, "creds", tcls):
+                    self._scope_skipped += 1
+                    continue
 
                 generic = False
                 if exploit.__module__.startswith("routerxpl.modules.creds.generic"):

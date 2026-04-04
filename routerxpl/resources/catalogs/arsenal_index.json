@@ -25,6 +25,7 @@
     "discord_requested_devices.json",
     "external_tool_intel_sources.json",
     "market_priority_devices_2010_2026.json",
+    "module_target_scope.json",
     "osi_tcpip_priority_matrix.json",
     "post2018_network_devices.json",
     "workspace_reuse_inventory.json"
@@ -2012,6 +2013,7 @@
       "generic/http_basic_digest_bruteforce.py",
       "generic/http_basic_digest_default.py",
       "generic/http_multi_auth_default.py",
+      "generic/http_web_form_bruteforce.py",
       "generic/sftp_bruteforce.py",
       "generic/sftp_default.py",
       "generic/snmp_bruteforce.py",

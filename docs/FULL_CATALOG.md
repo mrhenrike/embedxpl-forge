@@ -1,6 +1,6 @@
 # RouterXPL-Forge — Full Module Catalog
 
-> Generated: 2026-04-04T02:13:09.600360+00:00
+> Generated: 2026-04-04T03:07:52.290832+00:00
 > Author: Andre Henrique (@mrhenrike) | Uniao Geek
 
 ## Summary
@@ -8,12 +8,12 @@
 | Category | Count |
 |---|---:|
 | Exploits | 129 |
-| Credential Modules | 95 |
+| Credential Modules | 96 |
 | Scanners | 5 |
 | Generic Modules | 16 |
 | Encoders | 13 |
 | Payloads | 32 |
-| **Total Modules** | **290** |
+| **Total Modules** | **291** |
 | Distinct CVEs | 32 |
 
 ---
@@ -387,8 +387,8 @@
 
 66. **HTTP Form Char-by-Char Oracle**
    - Path: `exploits/generic/http_form_char_by_char_oracle.py`
-   - Framework module for character-by-character password discovery via content or timing oracle.
-   - Devices: Routers, Switches, TAPs, FW, NGFW
+   - Generic framework for character-by-character password probing when the login page leaks a content or timing oracle. Not bound to a specific vendor/model/year in the market-priority catalog — you must 
+   - Devices: Any in-scope device with a vulnerable web login oracle (lab-validated only)
 
 ### huawei (7)
 
@@ -759,7 +759,7 @@
    - Exploit implementation for ZyWall USG 20 Authentication Bypass In Configuration Import/Export. If the tharget is vulnerable it allows to download configuration files which contains sensitive data like
    - Devices: ZyXEL ZyWALL USG-20, ZyXEL ZyWALL USG-20W, ZyXEL ZyWALL USG-50, ZyXEL ZyWALL USG-100, ZyXEL ZyWALL USG-200, ZyXEL ZyWALL USG-300, ZyXEL ZyWALL USG-1000, ZyXEL ZyWALL USG-1050, ZyXEL ZyWALL USG-2000
 
-## Credential Modules (95)
+## Credential Modules (96)
 
 ### 2wire (3)
 
@@ -988,330 +988,337 @@
    - Module validates multiple HTTP auth methods (basic, digest, bearer, custom headers, form).
    - Devices: Routers, Switches, TAPs, FW, NGFW
 
+### http_web_form_bruteforce.py (1)
+
+40. **HTTP Web Form Bruteforce (Hydra-style)**
+   - Path: `creds/generic/http_web_form_bruteforce.py`
+   - Dictionary attack against HTTP/HTTPS login forms. Set failure/success body substrings, status codes, or Location fragments—similar to Hydra/JtR web modules. Respect rate limits and authorization; for 
+   - Devices: Routers, Switches, Gateways, CPE
+
 ### huawei (3)
 
-40. **Huawei Router Default FTP Creds**
+41. **Huawei Router Default FTP Creds**
    - Path: `creds/routers/huawei/ftp_default_creds.py`
    - Module performs dictionary attack against Huawei Router FTP service. If valid credentials are found, they are displayed to the user.
    - Devices: Huawei Router
 
-41. **Huawei Router Default SSH Creds**
+42. **Huawei Router Default SSH Creds**
    - Path: `creds/routers/huawei/ssh_default_creds.py`
    - Module performs dictionary attack against Huawei Router SSH service. If valid credentials are found, they are displayed to the user.
    - Devices: Huawei Router
 
-42. **Huawei Router Default Telnet Creds**
+43. **Huawei Router Default Telnet Creds**
    - Path: `creds/routers/huawei/telnet_default_creds.py`
    - Module performs dictionary attack against Huawei Router Telnet service. If valid credentials are found, they are displayed to the user.
    - Devices: Huawei Router
 
 ### ipfire (3)
 
-43. **IPFire Router Default FTP Creds**
+44. **IPFire Router Default FTP Creds**
    - Path: `creds/routers/ipfire/ftp_default_creds.py`
    - Module performs dictionary attack against IPFire Router FTP service. If valid credentials are found, they are displayed to the user.
    - Devices: IPFire Router
 
-44. **IPFire Router Default SSH Creds**
+45. **IPFire Router Default SSH Creds**
    - Path: `creds/routers/ipfire/ssh_default_creds.py`
    - Module performs dictionary attack against IPFire Router SSH service. If valid credentials are found, they are displayed to the user.
    - Devices: IPFire Router
 
-45. **IPFire Router Default Telnet Creds**
+46. **IPFire Router Default Telnet Creds**
    - Path: `creds/routers/ipfire/telnet_default_creds.py`
    - Module performs dictionary attack against IPFire Router Telnet service. If valid credentials are found, they are displayed to the user.
    - Devices: IPFire Router
 
 ### juniper (3)
 
-46. **Juniper Router Default FTP Creds**
+47. **Juniper Router Default FTP Creds**
    - Path: `creds/routers/juniper/ftp_default_creds.py`
    - Module performs dictionary attack against Juniper Router FTP service. If valid credentials are foundm they are displayed to the user.
    - Devices: Juniper Router
 
-47. **Juniper Router Default SSH Creds**
+48. **Juniper Router Default SSH Creds**
    - Path: `creds/routers/juniper/ssh_default_creds.py`
    - Module performs dictionary attack against Juniper Router SSH service. If valid credentials are foundm they are displayed to the user.
    - Devices: Juniper Router
 
-48. **Juniper Router Default Telnet Creds**
+49. **Juniper Router Default Telnet Creds**
    - Path: `creds/routers/juniper/telnet_default_creds.py`
    - Module performs dictionary attack against Juniper Router Telnet service. If valid credentials are foundm they are displayed to the user.
    - Devices: Juniper Router
 
 ### linksys (3)
 
-49. **Linksys Router Default FTP Creds**
+50. **Linksys Router Default FTP Creds**
    - Path: `creds/routers/linksys/ftp_default_creds.py`
    - Module performs dictionary attack against Linksys Router FTP service.If valid credentials are found, they are displayed to the user.
    - Devices: Linksys Router
 
-50. **Linksys Router Default SSH Creds**
+51. **Linksys Router Default SSH Creds**
    - Path: `creds/routers/linksys/ssh_default_creds.py`
    - Module performs dictionary attack against Linksys Router SSH service.If valid credentials are found, they are displayed to the user.
    - Devices: Linksys Router
 
-51. **Linksys Router Default Telnet Creds**
+52. **Linksys Router Default Telnet Creds**
    - Path: `creds/routers/linksys/telnet_default_creds.py`
    - Module performs dictionary attack against Linksys Router Telnet service.If valid credentials are found, they are displayed to the user.
    - Devices: Linksys Router
 
 ### mikrotik (4)
 
-52. **Mikrotik Default Creds - API ROS**
+53. **Mikrotik Default Creds - API ROS**
    - Path: `creds/routers/mikrotik/api_ros_default_creds.py`
    - Module performs dictionary attack against Mikrotik API and API-SSL. If valid credentials are found they are displayed to the user.
    - Devices: Mikrotik Router
 
-53. **Mikrotik Router Default FTP Creds**
+54. **Mikrotik Router Default FTP Creds**
    - Path: `creds/routers/mikrotik/ftp_default_creds.py`
    - Module performs dictionary attack against Mikrotik Router FTP service.If valid credentials are found they are displayed to the user.
    - Devices: Mikrotik Router
 
-54. **Mikrotik Router Default SSH Creds**
+55. **Mikrotik Router Default SSH Creds**
    - Path: `creds/routers/mikrotik/ssh_default_creds.py`
    - Module performs dictionary attack against Mikrotik Router SSH service.If valid credentials are found they are displayed to the user.
    - Devices: Mikrotik Router
 
-55. **Mikrotik Router Default Telnet Creds**
+56. **Mikrotik Router Default Telnet Creds**
    - Path: `creds/routers/mikrotik/telnet_default_creds.py`
    - Module performs dictionary attack against Mikrotik Router Telnet service.If valid credentials are found they are displayed to the user.
    - Devices: Mikrotik Router
 
 ### movistar (3)
 
-56. **Movistar Router Default FTP Creds**
+57. **Movistar Router Default FTP Creds**
    - Path: `creds/routers/movistar/ftp_default_creds.py`
    - Module performs dictionary attack against Movistar Router FTP service.If valid credentials are found, they are displayed to the user.
    - Devices: Movistar Router
 
-57. **Movistar Router Default SSH Creds**
+58. **Movistar Router Default SSH Creds**
    - Path: `creds/routers/movistar/ssh_default_creds.py`
    - Module performs dictionary attack against Movistar Router SSH service.If valid credentials are found, they are displayed to the user.
    - Devices: Movistar Router
 
-58. **Movistar Router Default Telnet Creds**
+59. **Movistar Router Default Telnet Creds**
    - Path: `creds/routers/movistar/telnet_default_creds.py`
    - Module performs dictionary attack against Movistar Router Telnet service.If valid credentials are found, they are displayed to the user.
    - Devices: Movistar Router
 
 ### netcore (3)
 
-59. **Netcore Router Default FTP Creds**
+60. **Netcore Router Default FTP Creds**
    - Path: `creds/routers/netcore/ftp_default_creds.py`
    - Module performs dictionary attack against Netcore Router FTP service.If valid credentials are found, they are displayed to the user.
    - Devices: Netcore Router
 
-60. **Netcore Router Default SSH Creds**
+61. **Netcore Router Default SSH Creds**
    - Path: `creds/routers/netcore/ssh_default_creds.py`
    - Module performs dictionary attack against Netcore Router SSH service.If valid credentials are found, they are displayed to the user.
    - Devices: Netcore Router
 
-61. **Netcore Router Default Telnet Creds**
+62. **Netcore Router Default Telnet Creds**
    - Path: `creds/routers/netcore/telnet_default_creds.py`
    - Module performs dictionary attack against Netcore Router Telnet service.If valid credentials are found, they are displayed to the user.
    - Devices: Netcore Router
 
 ### netgear (3)
 
-62. **Netgear Router Default FTP Creds**
+63. **Netgear Router Default FTP Creds**
    - Path: `creds/routers/netgear/ftp_default_creds.py`
    - Module performs dictionary attack against Netgear Router FTP service. If valid credentials are found, they are displayed to the user.
    - Devices: Netgear Router
 
-63. **Netgear Router Default SSH Creds**
+64. **Netgear Router Default SSH Creds**
    - Path: `creds/routers/netgear/ssh_default_creds.py`
    - Module performs dictionary attack against Netgear Router SSH service. If valid credentials are found, they are displayed to the user.
    - Devices: Netgear Router
 
-64. **Netgear Router Default Telnet Creds**
+65. **Netgear Router Default Telnet Creds**
    - Path: `creds/routers/netgear/telnet_default_creds.py`
    - Module performs dictionary attack against Netgear Router Telnet service. If valid credentials are found, they are displayed to the user.
    - Devices: Netgear Router
 
 ### netsys (3)
 
-65. **Netsys Router Default FTP Creds**
+66. **Netsys Router Default FTP Creds**
    - Path: `creds/routers/netsys/ftp_default_creds.py`
    - Module performs dictionary attack against Netsys Router FTP service. If valid credentials are found, they are displayed to the user.
    - Devices: Netsys Router
 
-66. **Netsys Router Default SSH Creds**
+67. **Netsys Router Default SSH Creds**
    - Path: `creds/routers/netsys/ssh_default_creds.py`
    - Module performs dictionary attack against Netsys Router SSH service. If valid credentials are found, they are displayed to the user.
    - Devices: Netsys Router
 
-67. **Netsys Router Default Telnet Creds**
+68. **Netsys Router Default Telnet Creds**
    - Path: `creds/routers/netsys/telnet_default_creds.py`
    - Module performs dictionary attack against Netsys Router Telnet service. If valid credentials are found, they are displayed to the user.
    - Devices: Netsys Router
 
 ### pfsense (2)
 
-68. **PFSense Router Default Web Interface Creds - HTTP Form**
+69. **PFSense Router Default Web Interface Creds - HTTP Form**
    - Path: `creds/routers/pfsense/webinterface_http_form_default_creds.py`
    - Module performs dictionary attack against PFSense Router web interface. If valid credentials are found, they are displayed to the user.
    - Devices: PFSense Router
 
-69. **PFSense Router SSH Creds**
+70. **PFSense Router SSH Creds**
    - Path: `creds/routers/pfsense/ssh_default_creds.py`
    - Module performs dictionary attack against PFSense Router SSH service. If valid credentials are found, they are displayed to the user.
    - Devices: PFSense Router
 
 ### sftp_bruteforce.py (1)
 
-70. **SFTP Bruteforce**
+71. **SFTP Bruteforce**
    - Path: `creds/generic/sftp_bruteforce.py`
    - Module performs bruteforce attack against SFTP service. If valid credentials are found, they are displayed to the user.
    - Devices: Multiple devices
 
 ### sftp_default.py (1)
 
-71. **SFTP Default Creds**
+72. **SFTP Default Creds**
    - Path: `creds/generic/sftp_default.py`
    - Module performs dictionary attack with default credentials against SFTP service. If valid credentials are found, they are displayed to the user.
    - Devices: Multiple devices
 
 ### snmp_bruteforce.py (1)
 
-72. **SNMP Bruteforce**
+73. **SNMP Bruteforce**
    - Path: `creds/generic/snmp_bruteforce.py`
    - Module performs bruteforce attack against SNMP service. If valid community string is found, it is displayed to the user
    - Devices: Multiple devices
 
 ### snmpv3_default.py (1)
 
-73. **SNMPv3 Default Creds**
+74. **SNMPv3 Default Creds**
    - Path: `creds/generic/snmpv3_default.py`
    - Module validates default SNMPv3 credentials against target service.
    - Devices: Routers, Switches, TAPs, FW, NGFW
 
 ### ssh_bruteforce.py (1)
 
-74. **SSH Bruteforce**
+75. **SSH Bruteforce**
    - Path: `creds/generic/ssh_bruteforce.py`
    - Module performs bruteforce attack against SSH service. If valid credentials are found, they are displayed to the user.
    - Devices: Multiple devices
 
 ### ssh_default.py (1)
 
-75. **SSH Default Creds**
+76. **SSH Default Creds**
    - Path: `creds/generic/ssh_default.py`
    - Module performs bruteforce attack against SSH service. If valid credentials are found, they are displayed to the user.
    - Devices: Multiple devices
 
 ### technicolor (3)
 
-76. **Technicolor Router Default FTP Creds**
+77. **Technicolor Router Default FTP Creds**
    - Path: `creds/routers/technicolor/ftp_default_creds.py`
    - Module performs dictionary attack against Technicolor Router FTP service. If valid credentials are found, they are displayed to the user.
    - Devices: Technicolor Router
 
-77. **Technicolor Router Default SSH Creds**
+78. **Technicolor Router Default SSH Creds**
    - Path: `creds/routers/technicolor/ssh_default_creds.py`
    - Module performs dictionary attack against Technicolor Router SSH service. If valid credentials are found, they are displayed to the user.
    - Devices: Technicolor Router
 
-78. **Technicolor Router Default Telnet Creds**
+79. **Technicolor Router Default Telnet Creds**
    - Path: `creds/routers/technicolor/telnet_default_creds.py`
    - Module performs dictionary attack against Technicolor Router Telnet service. If valid credentials are found, they are displayed to the user.
    - Devices: Technicolor Router
 
 ### telnet_bruteforce.py (1)
 
-79. **Telnet Bruteforce**
+80. **Telnet Bruteforce**
    - Path: `creds/generic/telnet_bruteforce.py`
    - Module performs bruteforce attack against Telnet service. If valid credentials are found, they are displayed to the user.
    - Devices: Multiple devices
 
 ### telnet_default.py (1)
 
-80. **Telnet Default Creds**
+81. **Telnet Default Creds**
    - Path: `creds/generic/telnet_default.py`
    - Module performs dictionary attack with default credentials against Telnet service. If valid credentials are found, they are displayed to the user.
    - Devices: Multiple devices
 
 ### thomson (3)
 
-81. **Thomson Router Default FTP Creds**
+82. **Thomson Router Default FTP Creds**
    - Path: `creds/routers/thomson/ftp_default_creds.py`
    - Module performs dictionary attack against Thomson Router FTP service. If valid credentials are found, they are displayed to the user.
    - Devices: Thomson Router
 
-82. **Thomson Router Default SSH Creds**
+83. **Thomson Router Default SSH Creds**
    - Path: `creds/routers/thomson/ssh_default_creds.py`
    - Module performs dictionary attack against Thomson Router SSH service. If valid credentials are found, they are displayed to the user.
    - Devices: Thomson Router
 
-83. **Thomson Router Default Telnet Creds**
+84. **Thomson Router Default Telnet Creds**
    - Path: `creds/routers/thomson/telnet_default_creds.py`
    - Module performs dictionary attack against Thomson Router Telnet service. If valid credentials are found, they are displayed to the user.
    - Devices: Thomson Router
 
 ### tplink (3)
 
-84. **TP-Link Router Default FTP Creds**
+85. **TP-Link Router Default FTP Creds**
    - Path: `creds/routers/tplink/ftp_default_creds.py`
    - Module performs dictionary attack against TP-Link Router FTP service. If valid credentials are found, they are displayed to the user.
    - Devices: TP-Link Router
 
-85. **TP-Link Router Default SSH Creds**
+86. **TP-Link Router Default SSH Creds**
    - Path: `creds/routers/tplink/ssh_default_creds.py`
    - Module performs dictionary attack against TP-Link Router SSH service. If valid credentials are found, they are displayed to the user.
    - Devices: TP-Link Router
 
-86. **TP-Link Router Default Telnet Creds**
+87. **TP-Link Router Default Telnet Creds**
    - Path: `creds/routers/tplink/telnet_default_creds.py`
    - Module performs dictionary attack against TP-Link Router Telnet service. If valid credentials are found, they are displayed to the user.
    - Devices: TP-Link Router
 
 ### ubiquiti (3)
 
-87. **Ubiquiti Router Default FTP Creds**
+88. **Ubiquiti Router Default FTP Creds**
    - Path: `creds/routers/ubiquiti/ftp_default_creds.py`
    - Module performs dictionary attack against Ubiquiti Router FTP service. If valid credentials are found, they are displayed to the user.
    - Devices: Ubiquiti Router
 
-88. **Ubiquiti Router Default SSH Creds**
+89. **Ubiquiti Router Default SSH Creds**
    - Path: `creds/routers/ubiquiti/ssh_default_creds.py`
    - Module performs dictionary attack against Ubiquiti Router SSH service. If valid credentials are found, they are displayed to the user.
    - Devices: Ubiquiti Router
 
-89. **Ubiquiti Router Default Telnet Creds**
+90. **Ubiquiti Router Default Telnet Creds**
    - Path: `creds/routers/ubiquiti/telnet_default_creds.py`
    - Module performs dictionary attack against Ubiquiti Router Telnet service. If valid credentials are found, they are displayed to the user.
    - Devices: Ubiquiti Router
 
 ### zte (3)
 
-90. **ZTE Router Default FTP Creds**
+91. **ZTE Router Default FTP Creds**
    - Path: `creds/routers/zte/ftp_default_creds.py`
    - Module performs dictioanry attack against ZTE Router FTP service. If valid credentials are found, they are displayed to the user.
    - Devices: ZTE Router
 
-91. **ZTE Router Default SSH Creds**
+92. **ZTE Router Default SSH Creds**
    - Path: `creds/routers/zte/ssh_default_creds.py`
    - Module performs dictionary attack against ZTE Router SSH service. If valid credentials are found, they are displayed to the user.
    - Devices: ZTE Router
 
-92. **ZTE Router Default Telnet Creds**
+93. **ZTE Router Default Telnet Creds**
    - Path: `creds/routers/zte/telnet_default_creds.py`
    - Module performs dictionary attack against ZTE Router Telnet service. If valid credentials are found, they are displayed to the user.
    - Devices: ZTE Router
 
 ### zyxel (3)
 
-93. **Zyxel Router Default FTP Creds**
+94. **Zyxel Router Default FTP Creds**
    - Path: `creds/routers/zyxel/ftp_default_creds.py`
    - Module performs dictionary attack against Zyxel Router FTP service. If valid credentials are found, they are displayed to the user.
    - Devices: Zyxel Router
 
-94. **Zyxel Router Default SSH Creds**
+95. **Zyxel Router Default SSH Creds**
    - Path: `creds/routers/zyxel/ssh_default_creds.py`
    - Module performs dictionary attack against Zyxel Router SSH service. If valid credentials are found, they are displayed to the user.
    - Devices: Zyxel Router
 
-95. **Zyxel Router Default Telnet Creds**
+96. **Zyxel Router Default Telnet Creds**
    - Path: `creds/routers/zyxel/telnet_default_creds.py`
    - Module performs dictionary attack against Zyxel Router Telnet service. If valid credentials are found, they are displayed to the user.
    - Devices: Zyxel Router

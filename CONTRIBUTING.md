@@ -1,46 +1,81 @@
-# Contribution Guidelines
+# Contributing — RouterXPL-Forge
 
-Author: André Henrique (@mrhenrike) | União Geek — https://github.com/Uniao-Geek
+**Author:** André Henrique ([@mrhenrike](https://github.com/mrhenrike)) \| **União Geek** — [https://github.com/Uniao-Geek](https://github.com/Uniao-Geek)
 
-## Scope
+**Language:** **English (en-US)** — default. **Português (pt-BR):** [CONTRIBUTING.pt-BR.md](CONTRIBUTING.pt-BR.md)
 
-For this repository:
+Thanks for considering a contribution. This document summarizes scope, workflow, and expected checks.
 
-- In scope: routers, switches, taps, fw and ngfw.
-- Out of scope: camera, printer and dvr modules.
+## Documentation and wiki
 
-## How to Contribute
+**Documentation is bilingual:** default **en-US**; **pt-BR** lives in parallel paths (see repository root and `docs/wiki/`).
 
-- Report bugs through repository issues with reproducible evidence.
-- Propose improvements in scanners, creds, exploits, protocol clients, and coverage tooling.
-- Submit focused pull requests with clear risk and impact notes.
+- README: [README.md](README.md) · [README.pt-BR.md](README.pt-BR.md)
+- Wiki hub: [docs/wiki/README.md](docs/wiki/README.md)
+- Wiki **en-US:** [docs/wiki/en-US/README.md](docs/wiki/en-US/README.md)
+- Wiki **pt-BR:** [docs/wiki/pt-BR/README.md](docs/wiki/pt-BR/README.md)
+- Before opening an issue, check the wiki and [docs/COVERAGE_MATRIX.md](docs/COVERAGE_MATRIX.md).
 
-## Bug Reports
+## Repository scope
 
-Provide:
+| In scope | Not the focus of this fork |
+|----------|----------------------------|
+| Routers, switches, TAPs, firewalls, NGFW | Modules whose primary target is IP camera, printer, or DVR |
 
-- exact module path and command sequence
-- target profile (vendor/model/firmware when known)
-- expected behavior vs actual behavior
-- traceback/log evidence with sensitive data removed
+Out-of-scope proposals may be declined or redirected to a specialized fork.
 
-## Validation Expectations
+## How to contribute
 
-Before opening a PR:
+- **Issues:** bugs, compatibility regressions, module ideas aligned with scope
+- **Pull requests:** focused fixes, new scanners/exploits/creds with references (CVE, advisory, PoC)
+- **Catalogs:** updates under `routerxpl/resources/catalogs/` with rationale and sources
 
-1. Run compatibility smoke flow.
-2. Run market-priority minimum validator.
-3. Regenerate coverage matrix and keep docs in sync.
+## PR best practices
 
-Example commands:
+1. One PR should address **one coherent** topic.
+2. Include **risk notes** (operational impact, security surface).
+3. **Do not** commit secrets, `.env`, credentials, or customer data.
+4. Preserve upstream `authors` in inherited modules; add `subcredits` when adapting.
+5. Update **both locales** when you change user-visible behavior (en-US + pt-BR wiki sections as applicable).
+
+## Bug reports
+
+Include:
+
+- Module path (e.g. `exploits/routers/dlink/dir_815_850l_rce`)
+- Exact command sequence (interactive or `rxf.py -m ... -s ...`)
+- OS, Python version, venv vs global
+- Expected vs actual behavior
+- Traceback or `routerxpl.log` excerpt **without** real third-party IPs/tokens
+
+## Suggested local validation
 
 ```bash
+python tools/env_doctor.py
 python tools/compat_smoke.py
 python tools/validate_market_priority_minimums.py
 python tools/generate_coverage_matrix.py
 ```
 
-## Security and Conduct
+Adjust for your PR (documentation-only changes may need less).
 
-- Read `SECURITY.md` before reporting vulnerabilities.
-- Follow `CODE_OF_CONDUCT.md` for all interactions.
+If you add or remove Python modules under `routerxpl/modules/`, also run:
+
+```bash
+python tools/gen_wiki_module_index.py
+```
+
+This refreshes [docs/wiki/ANEXO-INDICE-MODULOS.md](docs/wiki/ANEXO-INDICE-MODULOS.md) (language-neutral path index).
+
+## Security and conduct
+
+- Read [SECURITY.md](SECURITY.md) before reporting vulnerabilities in **this framework’s code**.
+- Interactions follow [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
+
+## Commit messages
+
+Prefer clear, imperative messages with enough context for the changelog (e.g. `fix(snmp): handle timeout on Windows`).
+
+---
+
+> **Author:** André Henrique ([@mrhenrike](https://github.com/mrhenrike)) \| **União Geek** — [https://github.com/Uniao-Geek](https://github.com/Uniao-Geek)
