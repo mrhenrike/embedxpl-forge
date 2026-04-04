@@ -20,6 +20,7 @@
   "catalogs": [
     "arsenal_index.json",
     "arsenal_layout.json",
+    "cve_extended_catalog.json",
     "deep_intel_backlog.json",
     "discord_requested_devices.json",
     "external_tool_intel_sources.json",
@@ -2105,6 +2106,7 @@
     "scanners": [
       "autopwn.py",
       "misc/misc_scan.py",
+      "routers/fortigate_sslvpn_scan.py",
       "routers/hootoo_scan.py",
       "routers/router_scan.py"
     ],

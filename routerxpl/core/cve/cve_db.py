@@ -152,21 +152,55 @@ def _version_in_range(actual: str, affected: str) -> bool:
 # Database loader
 # =====================================================================
 
+def _entry_from_mapping(raw: Dict[str, Any]) -> CVEEntry:
+    """Build CVEEntry from dict (embedded list or JSON catalog)."""
+    return CVEEntry(
+        cve_id=raw["cve_id"],
+        vendor=raw.get("vendor", ""),
+        product=raw.get("product", ""),
+        affected_versions=raw.get("affected_versions", ""),
+        description=raw.get("description", ""),
+        cvss_score=float(raw.get("cvss_score", 0.0)),
+        access_vector=raw.get("access_vector", "REMOTE"),
+        exploit_available=bool(raw.get("exploit_available", False)),
+        references=list(raw.get("references", [])),
+    )
+
+
 def _load_embedded() -> List[CVEEntry]:
     """Load the embedded CVE catalog."""
+    return [_entry_from_mapping(raw) for raw in _EMBEDDED_CVES]
+
+
+def _load_extended_json_catalog(repo_root: Path) -> List[CVEEntry]:
+    """Load additional CVE rows from resources/catalogs/cve_extended_catalog.json."""
+    path = repo_root / "resources" / "catalogs" / "cve_extended_catalog.json"
+    if not path.exists():
+        return []
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        logger.warning("cve_extended_catalog.json unreadable: %s", exc)
+        return []
     entries: List[CVEEntry] = []
-    for raw in _EMBEDDED_CVES:
-        entries.append(CVEEntry(
-            cve_id=raw["cve_id"],
-            vendor=raw.get("vendor", ""),
-            product=raw.get("product", ""),
-            affected_versions=raw.get("affected_versions", ""),
-            description=raw.get("description", ""),
-            cvss_score=float(raw.get("cvss_score", 0.0)),
-            access_vector=raw.get("access_vector", "REMOTE"),
-            references=raw.get("references", []),
-        ))
+    for raw in data.get("entries", []):
+        if not raw.get("cve_id"):
+            continue
+        try:
+            entries.append(_entry_from_mapping(raw))
+        except (KeyError, TypeError, ValueError) as exc:
+            logger.warning("skip bad CVE row %s: %s", raw.get("cve_id"), exc)
     return entries
+
+
+def _merge_cve_entries(repo_root: Path) -> List[CVEEntry]:
+    """Merge embedded CVEs with JSON extended catalog; extended overrides on same ID."""
+    by_id: Dict[str, CVEEntry] = {}
+    for entry in _load_embedded():
+        by_id[entry.cve_id.upper()] = entry
+    for entry in _load_extended_json_catalog(repo_root):
+        by_id[entry.cve_id.upper()] = entry
+    return list(by_id.values())
 
 
 def _load_module_cves(modules_root: Path) -> Dict[str, str]:
@@ -193,11 +227,12 @@ class CVEDatabase:
     """Offline CVE database with vendor/product/version lookup."""
 
     def __init__(self, modules_root: Optional[Path] = None):
-        self._entries = _load_embedded()
+        repo_root = Path(__file__).resolve().parents[2]
+        self._entries = _merge_cve_entries(repo_root)
         self._module_map: Dict[str, str] = {}
 
         if modules_root is None:
-            candidate = Path(__file__).resolve().parents[2] / "modules"
+            candidate = repo_root / "modules"
             if candidate.exists():
                 modules_root = candidate
 

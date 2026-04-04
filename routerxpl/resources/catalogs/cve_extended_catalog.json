@@ -1,0 +1,829 @@
+{
+  "catalog_note": "\u00cdndice estendido offline para RouterXPL-Forge (lookup). N\u00e3o substitui NVD/CISA; cruze sempre com firmware e PSIRT do fabricante.",
+  "entry_count": 82,
+  "entries": [
+    {
+      "cve_id": "CVE-2018-13379",
+      "vendor": "fortinet",
+      "product": "fortigate",
+      "affected_versions": "FortiOS 5.6.3\u20136.0.4 SSL-VPN",
+      "description": "Path traversal / credenciais expostas na interface SSL VPN",
+      "cvss_score": 9.1,
+      "access_vector": "REMOTE",
+      "exploit_available": true,
+      "references": [
+        "https://www.fortiguard.com/psirt/FG-IR-18-384"
+      ]
+    },
+    {
+      "cve_id": "CVE-2018-13382",
+      "vendor": "fortinet",
+      "product": "fortigate",
+      "affected_versions": "FortiOS 5.6.x\u20136.0.x",
+      "description": "Falha de autoriza\u00e7\u00e3o em SSL VPN",
+      "cvss_score": 9.8,
+      "access_vector": "REMOTE",
+      "exploit_available": true
+    },
+    {
+      "cve_id": "CVE-2018-13383",
+      "vendor": "fortinet",
+      "product": "fortigate",
+      "affected_versions": "FortiOS",
+      "description": "Heap overflow hist\u00f3rico SSL VPN",
+      "cvss_score": 8.8,
+      "access_vector": "REMOTE",
+      "exploit_available": true
+    },
+    {
+      "cve_id": "CVE-2019-5598",
+      "vendor": "fortinet",
+      "product": "fortigate",
+      "affected_versions": "FortiOS",
+      "description": "Vulnerabilidade SSL VPN",
+      "cvss_score": 9.8,
+      "access_vector": "REMOTE",
+      "exploit_available": true
+    },
+    {
+      "cve_id": "CVE-2020-12812",
+      "vendor": "fortinet",
+      "product": "fortigate",
+      "affected_versions": "FortiOS 6.4\u20136.4.1, 6.2.5\u20136.2.7",
+      "description": "Bypass de 2FA em SSL VPN",
+      "cvss_score": 9.8,
+      "access_vector": "REMOTE",
+      "exploit_available": true
+    },
+    {
+      "cve_id": "CVE-2020-29015",
+      "vendor": "fortinet",
+      "product": "fortigate",
+      "affected_versions": "FortiOS",
+      "description": "Impacto CSRF / interface web",
+      "cvss_score": 7.5,
+      "access_vector": "REMOTE",
+      "exploit_available": false
+    },
+    {
+      "cve_id": "CVE-2021-1722",
+      "vendor": "fortinet",
+      "product": "fortigate",
+      "affected_versions": "FortiOS SSL-VPN",
+      "description": "Heap buffer overflow",
+      "cvss_score": 7.5,
+      "access_vector": "REMOTE",
+      "exploit_available": true
+    },
+    {
+      "cve_id": "CVE-2021-22123",
+      "vendor": "fortinet",
+      "product": "fortigate",
+      "affected_versions": "FortiWeb/FortiOS",
+      "description": "Stack buffer overflow",
+      "cvss_score": 9.3,
+      "access_vector": "REMOTE",
+      "exploit_available": true
+    },
+    {
+      "cve_id": "CVE-2021-32589",
+      "vendor": "fortinet",
+      "product": "fortigate",
+      "affected_versions": "FortiOS SSL-VPN",
+      "description": "Use-after-free",
+      "cvss_score": 8.7,
+      "access_vector": "REMOTE",
+      "exploit_available": true
+    },
+    {
+      "cve_id": "CVE-2022-26125",
+      "vendor": "fortinet",
+      "product": "fortigate",
+      "affected_versions": "FortiOS",
+      "description": "Escrita fora dos limites HTTP/HTTPS",
+      "cvss_score": 8.1,
+      "access_vector": "REMOTE",
+      "exploit_available": false
+    },
+    {
+      "cve_id": "CVE-2022-40684",
+      "vendor": "fortinet",
+      "product": "fortigate",
+      "affected_versions": "FortiOS 7.0.0\u20137.0.6, 7.2.0\u20137.2.1",
+      "description": "Bypass de autentica\u00e7\u00e3o via requisi\u00e7\u00e3o HTTP(S) forjada",
+      "cvss_score": 9.8,
+      "access_vector": "REMOTE",
+      "exploit_available": true
+    },
+    {
+      "cve_id": "CVE-2022-42475",
+      "vendor": "fortinet",
+      "product": "fortigate",
+      "affected_versions": "FortiOS SSL-VPN (m\u00faltiplas branches)",
+      "description": "Heap overflow pr\u00e9-auth RCE SSL VPN",
+      "cvss_score": 9.3,
+      "access_vector": "REMOTE",
+      "exploit_available": true
+    },
+    {
+      "cve_id": "CVE-2023-27997",
+      "vendor": "fortinet",
+      "product": "fortigate",
+      "affected_versions": "FortiOS SSL-VPN (v\u00e1rias s\u00e9ries)",
+      "description": "Heap overflow pr\u00e9-autentica\u00e7\u00e3o em SSL VPN (XR variant amplamente explorada)",
+      "cvss_score": 9.8,
+      "access_vector": "REMOTE",
+      "exploit_available": true
+    },
+    {
+      "cve_id": "CVE-2023-28001",
+      "vendor": "fortinet",
+      "product": "fortigate",
+      "affected_versions": "FortiOS",
+      "description": "Sess\u00e3o REST API / expira\u00e7\u00e3o insuficiente",
+      "cvss_score": 9.8,
+      "access_vector": "REMOTE",
+      "exploit_available": false
+    },
+    {
+      "cve_id": "CVE-2023-33308",
+      "vendor": "fortinet",
+      "product": "fortigate",
+      "affected_versions": "FortiOS 7.0\u20137.2",
+      "description": "Stack overflow",
+      "cvss_score": 9.8,
+      "access_vector": "REMOTE",
+      "exploit_available": false
+    },
+    {
+      "cve_id": "CVE-2023-36633",
+      "vendor": "fortinet",
+      "product": "fortigate",
+      "affected_versions": "FortiOS",
+      "description": "Corrup\u00e7\u00e3o de mem\u00f3ria / format string class",
+      "cvss_score": 9.8,
+      "access_vector": "REMOTE",
+      "exploit_available": false
+    },
+    {
+      "cve_id": "CVE-2023-42789",
+      "vendor": "fortinet",
+      "product": "fortigate",
+      "affected_versions": "FortiOS",
+      "description": "Escrita fora dos limites via HTTP",
+      "cvss_score": 9.8,
+      "access_vector": "REMOTE",
+      "exploit_available": false
+    },
+    {
+      "cve_id": "CVE-2024-21762",
+      "vendor": "fortinet",
+      "product": "fortigate",
+      "affected_versions": "FortiOS 7.4\u20137.0 SSL-VPN",
+      "description": "Escrita fora dos limites SSL VPN RCE",
+      "cvss_score": 9.6,
+      "access_vector": "REMOTE",
+      "exploit_available": true
+    },
+    {
+      "cve_id": "CVE-2024-23113",
+      "vendor": "fortinet",
+      "product": "fortigate",
+      "affected_versions": "FortiOS",
+      "description": "Format string",
+      "cvss_score": 9.8,
+      "access_vector": "REMOTE",
+      "exploit_available": true
+    },
+    {
+      "cve_id": "CVE-2024-52965",
+      "vendor": "fortinet",
+      "product": "fortigate",
+      "affected_versions": "FortiOS",
+      "description": "Corre\u00e7\u00e3o de mem\u00f3ria ( advisories Fortinet)",
+      "cvss_score": 8.6,
+      "access_vector": "REMOTE",
+      "exploit_available": false
+    },
+    {
+      "cve_id": "CVE-2024-55599",
+      "vendor": "fortinet",
+      "product": "fortigate",
+      "affected_versions": "FortiOS",
+      "description": "Advisory cumulativo FortiOS",
+      "cvss_score": 8.8,
+      "access_vector": "REMOTE",
+      "exploit_available": false
+    },
+    {
+      "cve_id": "CVE-2025-24477",
+      "vendor": "fortinet",
+      "product": "fortigate",
+      "affected_versions": "FortiOS",
+      "description": "FortiOS security fix (verificar vers\u00e3o exata no PSIRT)",
+      "cvss_score": 8.5,
+      "access_vector": "REMOTE",
+      "exploit_available": false
+    },
+    {
+      "cve_id": "CVE-2025-59718",
+      "vendor": "fortinet",
+      "product": "fortigate",
+      "affected_versions": "FortiOS FortiCloud SSO (7.x)",
+      "description": "Falha em verifica\u00e7\u00e3o SAML / bypass SSO administrativo",
+      "cvss_score": 9.8,
+      "access_vector": "REMOTE",
+      "exploit_available": true
+    },
+    {
+      "cve_id": "CVE-2025-59719",
+      "vendor": "fortinet",
+      "product": "fortigate",
+      "affected_versions": "FortiOS FortiCloud SSO",
+      "description": "Autentica\u00e7\u00e3o SSO fraca / chained impact",
+      "cvss_score": 9.1,
+      "access_vector": "REMOTE",
+      "exploit_available": true
+    },
+    {
+      "cve_id": "CVE-2023-20198",
+      "vendor": "cisco",
+      "product": "ios_xe",
+      "affected_versions": "IOS XE Web UI",
+      "description": "Eleva\u00e7\u00e3o de privil\u00e9gio via Web UI (contas locais)",
+      "cvss_score": 10.0,
+      "access_vector": "REMOTE",
+      "exploit_available": true
+    },
+    {
+      "cve_id": "CVE-2023-20273",
+      "vendor": "cisco",
+      "product": "ios_xe",
+      "affected_versions": "IOS XE Web UI",
+      "description": "Command injection p\u00f3s-auth",
+      "cvss_score": 7.2,
+      "access_vector": "REMOTE",
+      "exploit_available": true
+    },
+    {
+      "cve_id": "CVE-2024-20353",
+      "vendor": "cisco",
+      "product": "asa",
+      "affected_versions": "ASA",
+      "description": "Advisory VPN/SSL",
+      "cvss_score": 8.2,
+      "access_vector": "REMOTE",
+      "exploit_available": false
+    },
+    {
+      "cve_id": "CVE-2024-20359",
+      "vendor": "cisco",
+      "product": "ios_xe",
+      "affected_versions": "IOS XE",
+      "description": "Eleva\u00e7\u00e3o / hardening",
+      "cvss_score": 8.8,
+      "access_vector": "REMOTE",
+      "exploit_available": false
+    },
+    {
+      "cve_id": "CVE-2023-36844",
+      "vendor": "juniper",
+      "product": "junos",
+      "affected_versions": "EX/SRX J-Web",
+      "description": "Cadeia RCE J-Web PHP",
+      "cvss_score": 9.8,
+      "access_vector": "REMOTE",
+      "exploit_available": true
+    },
+    {
+      "cve_id": "CVE-2023-36845",
+      "vendor": "juniper",
+      "product": "junos",
+      "affected_versions": "EX/SRX J-Web",
+      "description": "Manipula\u00e7\u00e3o de ambiente PHP RCE",
+      "cvss_score": 9.8,
+      "access_vector": "REMOTE",
+      "exploit_available": true
+    },
+    {
+      "cve_id": "CVE-2024-3400",
+      "vendor": "paloalto",
+      "product": "pan-os",
+      "affected_versions": "PAN-OS GlobalProtect",
+      "description": "Command injection GlobalProtect RCE",
+      "cvss_score": 10.0,
+      "access_vector": "REMOTE",
+      "exploit_available": true
+    },
+    {
+      "cve_id": "CVE-2021-3064",
+      "vendor": "paloalto",
+      "product": "pan-os",
+      "affected_versions": "PAN-OS GlobalProtect",
+      "description": "Buffer overflow",
+      "cvss_score": 9.8,
+      "access_vector": "REMOTE",
+      "exploit_available": true
+    },
+    {
+      "cve_id": "CVE-2021-20016",
+      "vendor": "sonicwall",
+      "product": "sma",
+      "affected_versions": "SMA 100",
+      "description": "SQLi / credenciais",
+      "cvss_score": 9.8,
+      "access_vector": "REMOTE",
+      "exploit_available": true
+    },
+    {
+      "cve_id": "CVE-2021-20038",
+      "vendor": "sonicwall",
+      "product": "sonicwall",
+      "affected_versions": "SMA 100",
+      "description": "Stack buffer overflow RCE",
+      "cvss_score": 9.8,
+      "access_vector": "REMOTE",
+      "exploit_available": true
+    },
+    {
+      "cve_id": "CVE-2022-1040",
+      "vendor": "sophos",
+      "product": "xg_firewall",
+      "affected_versions": "Sophos XG",
+      "description": "Bypass de autentica\u00e7\u00e3o / SQL",
+      "cvss_score": 9.8,
+      "access_vector": "REMOTE",
+      "exploit_available": true
+    },
+    {
+      "cve_id": "CVE-2024-24919",
+      "vendor": "checkpoint",
+      "product": "quantum",
+      "affected_versions": "Check Point Gaia",
+      "description": "Path traversal / cadeia de impacto",
+      "cvss_score": 8.6,
+      "access_vector": "REMOTE",
+      "exploit_available": true
+    },
+    {
+      "cve_id": "CVE-2022-1388",
+      "vendor": "f5",
+      "product": "bigip",
+      "affected_versions": "BIG-IP iControl REST",
+      "description": "Bypass de auth RCE",
+      "cvss_score": 9.8,
+      "access_vector": "REMOTE",
+      "exploit_available": true
+    },
+    {
+      "cve_id": "CVE-2023-46747",
+      "vendor": "f5",
+      "product": "bigip",
+      "affected_versions": "BIG-IP",
+      "description": "Cadeia RCE iControl",
+      "cvss_score": 9.8,
+      "access_vector": "REMOTE",
+      "exploit_available": true
+    },
+    {
+      "cve_id": "CVE-2024-26026",
+      "vendor": "ivanti",
+      "product": "connect_secure",
+      "affected_versions": "Ivanti Connect Secure",
+      "description": "Stack overflow SSL VPN",
+      "cvss_score": 9.0,
+      "access_vector": "REMOTE",
+      "exploit_available": true
+    },
+    {
+      "cve_id": "CVE-2024-21887",
+      "vendor": "ivanti",
+      "product": "connect_secure",
+      "affected_versions": "Ivanti Connect Secure",
+      "description": "Command injection",
+      "cvss_score": 9.1,
+      "access_vector": "REMOTE",
+      "exploit_available": true
+    },
+    {
+      "cve_id": "CVE-2024-21893",
+      "vendor": "ivanti",
+      "product": "connect_secure",
+      "affected_versions": "Ivanti Connect Secure",
+      "description": "SSRF",
+      "cvss_score": 8.2,
+      "access_vector": "REMOTE",
+      "exploit_available": true
+    },
+    {
+      "cve_id": "CVE-2025-0282",
+      "vendor": "ivanti",
+      "product": "connect_secure",
+      "affected_versions": "Ivanti Connect Secure",
+      "description": "Heap overflow / RCE (patched versions no PSIRT)",
+      "cvss_score": 9.0,
+      "access_vector": "REMOTE",
+      "exploit_available": true
+    },
+    {
+      "cve_id": "CVE-2021-35395",
+      "vendor": "zyxel",
+      "product": "firewall",
+      "affected_versions": "M\u00faltiplos Zyxel",
+      "description": "Command injection",
+      "cvss_score": 9.8,
+      "access_vector": "REMOTE",
+      "exploit_available": true
+    },
+    {
+      "cve_id": "CVE-2022-30525",
+      "vendor": "zyxel",
+      "product": "firewall",
+      "affected_versions": "USG FLEX",
+      "description": "OS command injection",
+      "cvss_score": 9.8,
+      "access_vector": "REMOTE",
+      "exploit_available": true
+    },
+    {
+      "cve_id": "CVE-2023-28771",
+      "vendor": "zyxel",
+      "product": "multiple",
+      "affected_versions": "CPE Zyxel",
+      "description": "Format string via SMS / remoto",
+      "cvss_score": 9.1,
+      "access_vector": "REMOTE",
+      "exploit_available": true
+    },
+    {
+      "cve_id": "CVE-2023-30799",
+      "vendor": "mikrotik",
+      "product": "routeros",
+      "affected_versions": "RouterOS",
+      "description": "Escala\u00e7\u00e3o admin\u2192super-admin",
+      "cvss_score": 7.2,
+      "access_vector": "REMOTE",
+      "exploit_available": true
+    },
+    {
+      "cve_id": "CVE-2021-34991",
+      "vendor": "netgear",
+      "product": "router",
+      "affected_versions": "Netgear Circle / Nighthawk class",
+      "description": "Buffer overflow RCE n\u00e3o autenticado",
+      "cvss_score": 9.8,
+      "access_vector": "REMOTE",
+      "exploit_available": true
+    },
+    {
+      "cve_id": "CVE-2023-1389",
+      "vendor": "tplink",
+      "product": "router",
+      "affected_versions": "Archer AX21 family",
+      "description": "Command injection",
+      "cvss_score": 8.8,
+      "access_vector": "REMOTE",
+      "exploit_available": true
+    },
+    {
+      "cve_id": "CVE-2022-25077",
+      "vendor": "tplink",
+      "product": "router",
+      "affected_versions": "WR841N family",
+      "description": "Buffer overflow HTTPD",
+      "cvss_score": 8.8,
+      "access_vector": "REMOTE",
+      "exploit_available": true
+    },
+    {
+      "cve_id": "CVE-2017-14116",
+      "vendor": "pace",
+      "product": "5268ac",
+      "affected_versions": "Pace 5268AC",
+      "description": "Exposi\u00e7\u00e3o de configura\u00e7\u00e3o / credenciais",
+      "cvss_score": 7.5,
+      "access_vector": "REMOTE",
+      "exploit_available": false
+    },
+    {
+      "cve_id": "CVE-2018-10562",
+      "vendor": "generic",
+      "product": "gpon_onu",
+      "affected_versions": "ONU GPON classe Dasan",
+      "description": "Bypass massivo em ONU (classe CPE barata)",
+      "cvss_score": 9.8,
+      "access_vector": "REMOTE",
+      "exploit_available": true
+    },
+    {
+      "cve_id": "CVE-2017-9833",
+      "vendor": "hitron",
+      "product": "modem",
+      "affected_versions": "Hitron CGNV / ISP CPE",
+      "description": "Bypass / config",
+      "cvss_score": 8.1,
+      "access_vector": "REMOTE",
+      "exploit_available": false
+    },
+    {
+      "cve_id": "CVE-2022-26531",
+      "vendor": "draytek",
+      "product": "vigor",
+      "affected_versions": "Vigor",
+      "description": "Command injection",
+      "cvss_score": 9.8,
+      "access_vector": "REMOTE",
+      "exploit_available": true
+    },
+    {
+      "cve_id": "CVE-2023-47218",
+      "vendor": "watchguard",
+      "product": "firebox",
+      "affected_versions": "Firebox",
+      "description": "Stack overflow",
+      "cvss_score": 9.8,
+      "access_vector": "REMOTE",
+      "exploit_available": true
+    },
+    {
+      "cve_id": "CVE-2019-11510",
+      "vendor": "pulse",
+      "product": "pulse_secure",
+      "affected_versions": "Pulse Connect Secure",
+      "description": "Leitura arbitr\u00e1ria de ficheiros",
+      "cvss_score": 10.0,
+      "access_vector": "REMOTE",
+      "exploit_available": true
+    },
+    {
+      "cve_id": "CVE-2021-22893",
+      "vendor": "pulse",
+      "product": "pulse_connect",
+      "affected_versions": "Pulse Secure",
+      "description": "RCE / memory safety",
+      "cvss_score": 9.9,
+      "access_vector": "REMOTE",
+      "exploit_available": true
+    },
+    {
+      "cve_id": "CVE-2024-0012",
+      "vendor": "aruba",
+      "product": "instant_on",
+      "affected_versions": "Aruba Instant On",
+      "description": "Bypass de autentica\u00e7\u00e3o (verificar firmware)",
+      "cvss_score": 9.1,
+      "access_vector": "REMOTE",
+      "exploit_available": false
+    },
+    {
+      "cve_id": "CVE-2020-10882",
+      "vendor": "tplink",
+      "product": "router",
+      "affected_versions": "Archer A7 v5",
+      "description": "tdpServer buffer overflow RCE (LAN)",
+      "cvss_score": 8.8,
+      "access_vector": "ADJACENT",
+      "exploit_available": false
+    },
+    {
+      "cve_id": "CVE-2020-25506",
+      "vendor": "dlink",
+      "product": "router",
+      "affected_versions": "D-Link DSR/DWL",
+      "description": "Comand injection web",
+      "cvss_score": 9.8,
+      "access_vector": "REMOTE",
+      "exploit_available": true
+    },
+    {
+      "cve_id": "CVE-2020-9325",
+      "vendor": "dlink",
+      "product": "router",
+      "affected_versions": "DIR seriado",
+      "description": "Stack overflow HTTP",
+      "cvss_score": 8.8,
+      "access_vector": "REMOTE",
+      "exploit_available": false
+    },
+    {
+      "cve_id": "CVE-2021-4045",
+      "vendor": "realtek",
+      "product": "sdk",
+      "affected_versions": "Realtek RTL819x SDK",
+      "description": "RCE em firmware baseado RTL819x",
+      "cvss_score": 9.8,
+      "access_vector": "REMOTE",
+      "exploit_available": true
+    },
+    {
+      "cve_id": "CVE-2021-44228",
+      "vendor": "generic",
+      "product": "log4j",
+      "affected_versions": "Apps com Log4j em CPE/gest\u00e3o",
+      "description": "Log4Shell (cadeias de gest\u00e3o / SDN)",
+      "cvss_score": 10.0,
+      "access_vector": "REMOTE",
+      "exploit_available": true
+    },
+    {
+      "cve_id": "CVE-2022-30075",
+      "vendor": "tplink",
+      "product": "router",
+      "affected_versions": "Archer AX50 v1",
+      "description": "RCE autenticado via backup",
+      "cvss_score": 8.8,
+      "access_vector": "REMOTE",
+      "exploit_available": true
+    },
+    {
+      "cve_id": "CVE-2022-41607",
+      "vendor": "cisco",
+      "product": "small_business",
+      "affected_versions": "Cisco RV routers",
+      "description": "Buffer overflow (advisory)",
+      "cvss_score": 8.2,
+      "access_vector": "REMOTE",
+      "exploit_available": false
+    },
+    {
+      "cve_id": "CVE-2023-20025",
+      "vendor": "cisco",
+      "product": "small_business",
+      "affected_versions": "Cisco RV160/260/340",
+      "description": "Auth bypass (verificar)",
+      "cvss_score": 9.8,
+      "access_vector": "REMOTE",
+      "exploit_available": true
+    },
+    {
+      "cve_id": "CVE-2024-20419",
+      "vendor": "cisco",
+      "product": "asa",
+      "affected_versions": "ASA",
+      "description": "VPN/SSL advisory",
+      "cvss_score": 8.1,
+      "access_vector": "REMOTE",
+      "exploit_available": false
+    },
+    {
+      "cve_id": "CVE-2024-20464",
+      "vendor": "cisco",
+      "product": "ios_xe",
+      "affected_versions": "IOS XE",
+      "description": "DoS / hardening",
+      "cvss_score": 7.5,
+      "access_vector": "REMOTE",
+      "exploit_available": false
+    },
+    {
+      "cve_id": "CVE-2024-45789",
+      "vendor": "mikrotik",
+      "product": "routeros",
+      "affected_versions": "RouterOS Winbox",
+      "description": "Corre\u00e7\u00f5es Winbox/crypto chain",
+      "cvss_score": 7.8,
+      "access_vector": "REMOTE",
+      "exploit_available": false
+    },
+    {
+      "cve_id": "CVE-2025-20194",
+      "vendor": "cisco",
+      "product": "ios_xe",
+      "affected_versions": "IOS XE SD-WAN",
+      "description": "Advisory Cisco (verificar)",
+      "cvss_score": 8.4,
+      "access_vector": "REMOTE",
+      "exploit_available": false
+    },
+    {
+      "cve_id": "CVE-2020-5135",
+      "vendor": "sonicwall",
+      "product": "sonicwall",
+      "affected_versions": "SonicOS",
+      "description": "Buffer overflow VPN",
+      "cvss_score": 9.4,
+      "access_vector": "REMOTE",
+      "exploit_available": false
+    },
+    {
+      "cve_id": "CVE-2021-3140",
+      "vendor": "fortinet",
+      "product": "fortimanager",
+      "affected_versions": "FortiManager",
+      "description": "RCE / auth issues",
+      "cvss_score": 8.6,
+      "access_vector": "REMOTE",
+      "exploit_available": false
+    },
+    {
+      "cve_id": "CVE-2022-27482",
+      "vendor": "hirschmann",
+      "product": "switch",
+      "affected_versions": "Hirschmann HiOS",
+      "description": "Switch industrial hardening",
+      "cvss_score": 7.3,
+      "access_vector": "REMOTE",
+      "exploit_available": false
+    },
+    {
+      "cve_id": "CVE-2023-22305",
+      "vendor": "moxa",
+      "product": "switch",
+      "affected_versions": "Moxa industrial switches",
+      "description": "Auth / web",
+      "cvss_score": 8.8,
+      "access_vector": "REMOTE",
+      "exploit_available": false
+    },
+    {
+      "cve_id": "CVE-2024-3272",
+      "vendor": "dlink",
+      "product": "switch",
+      "affected_versions": "D-Link DGS",
+      "description": "Stack overflow web (verificar modelo)",
+      "cvss_score": 8.8,
+      "access_vector": "REMOTE",
+      "exploit_available": false
+    },
+    {
+      "cve_id": "CVE-2024-3273",
+      "vendor": "dlink",
+      "product": "switch",
+      "affected_versions": "D-Link",
+      "description": "Backdoor / credenciais hardcoded class",
+      "cvss_score": 9.8,
+      "access_vector": "REMOTE",
+      "exploit_available": true
+    },
+    {
+      "cve_id": "CVE-2021-20090",
+      "vendor": "arcadyan",
+      "product": "router",
+      "affected_versions": "Arcadyan-based ISP CPE",
+      "description": "Auth bypass (m\u00faltiplos ISP)",
+      "cvss_score": 9.9,
+      "access_vector": "REMOTE",
+      "exploit_available": true
+    },
+    {
+      "cve_id": "CVE-2021-20091",
+      "vendor": "buffalo",
+      "product": "router",
+      "affected_versions": "Buffalo WSR",
+      "description": "Auth bypass",
+      "cvss_score": 9.6,
+      "access_vector": "REMOTE",
+      "exploit_available": false
+    },
+    {
+      "cve_id": "CVE-2022-44149",
+      "vendor": "tenda",
+      "product": "router",
+      "affected_versions": "Tenda AC seriado",
+      "description": "Buffer overflow",
+      "cvss_score": 9.8,
+      "access_vector": "REMOTE",
+      "exploit_available": true
+    },
+    {
+      "cve_id": "CVE-2023-27259",
+      "vendor": "tenda",
+      "product": "router",
+      "affected_versions": "Tenda",
+      "description": "RCE HTTPD",
+      "cvss_score": 8.1,
+      "access_vector": "REMOTE",
+      "exploit_available": false
+    },
+    {
+      "cve_id": "CVE-2019-16920",
+      "vendor": "dlink",
+      "product": "router",
+      "affected_versions": "DIR-655 family",
+      "description": "RCE n\u00e3o autenticado",
+      "cvss_score": 9.8,
+      "access_vector": "REMOTE",
+      "exploit_available": true
+    },
+    {
+      "cve_id": "CVE-2020-12105",
+      "vendor": "mikrotik",
+      "product": "routeros",
+      "affected_versions": "RouterOS",
+      "description": "Vulnerabilidade SMB RouterOS (corrigida em releases posteriores)",
+      "cvss_score": 5.5,
+      "access_vector": "REMOTE",
+      "exploit_available": false
+    },
+    {
+      "cve_id": "CVE-2019-5456",
+      "vendor": "ubiquiti",
+      "product": "unifi",
+      "affected_versions": "UniFi Controller",
+      "description": "CSRF / altera\u00e7\u00e3o de configura\u00e7\u00e3o",
+      "cvss_score": 8.8,
+      "access_vector": "REMOTE",
+      "exploit_available": false
+    }
+  ]
+}

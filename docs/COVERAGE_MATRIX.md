@@ -18,10 +18,10 @@
 
 ## Global Capability Summary
 
-- Module tree (routerxpl/modules): 0cb797341784684dd36b408375378362a0aebf61
-- Total modules indexed: 289
-- Distinct vendor/product entries: 289
-- Distinct CVEs mapped in modules: 27
+- Module tree (routerxpl/modules): af6f631f7851139ab5d8f140e4d2c1d8d072fd3d
+- Total modules indexed: 290
+- Distinct vendor/product entries: 290
+- Distinct CVEs mapped in modules: 32
 - Attack classes identified: auth_bypass, backdoor, creds_disclosure, dns_change, info_disclosure, password_reset_or_change, path_traversal, rce
 
 ### Module Type Counts
@@ -30,7 +30,7 @@
 - exploits: 129
 - generic: 16
 - payloads: 32
-- scanners: 4
+- scanners: 5
 
 ## Protocol Coverage (Inferred)
 
@@ -91,11 +91,11 @@
 | L3 | Internet | Network | bgp | 0 | no | route_injection_or_hijack_paths, icmp_or_control_plane_abuse, ipv6_transition_misconfig_exposure | routing_surface_enumeration, dual_stack_consistency_checks, control_plane_exposure_validation | P2 | P3 | P3 |
 | L4 | Transport | Transport | tcp | 29 | yes | service_enumeration_and_port_abuse, session_exhaustion_or_flood_paths, transport_timeout_and_retry_abuse | tcp_udp_surface_mapping, session_stability_validation, timeout_retry_behavior_checks | P1 | P1 | P1 |
 | L4 | Transport | Transport | udp | 8 | yes | service_enumeration_and_port_abuse, session_exhaustion_or_flood_paths, transport_timeout_and_retry_abuse | tcp_udp_surface_mapping, session_stability_validation, timeout_retry_behavior_checks | P1 | P1 | P1 |
-| L5-L7 | Application | Session/Presentation/Application | dns | 7 | yes | default_credential_and_bruteforce_paths, auth_bypass_and_session_abuse, protocol_parser_and_input_injection_paths, management_api_and_header_abuse, snmp_read_write_and_trap_plane_misuse | credential_validation_matrix, auth_method_coverage_checks, protocol_specific_exploitability_checks, snmpv2_snmpv3_trap_operational_validation, api_and_web_management_flow_validation | P1 | P1 | P2 |
+| L5-L7 | Application | Session/Presentation/Application | dns | 6 | yes | default_credential_and_bruteforce_paths, auth_bypass_and_session_abuse, protocol_parser_and_input_injection_paths, management_api_and_header_abuse, snmp_read_write_and_trap_plane_misuse | credential_validation_matrix, auth_method_coverage_checks, protocol_specific_exploitability_checks, snmpv2_snmpv3_trap_operational_validation, api_and_web_management_flow_validation | P1 | P1 | P2 |
 | L5-L7 | Application | Session/Presentation/Application | dhcp | 0 | no | default_credential_and_bruteforce_paths, auth_bypass_and_session_abuse, protocol_parser_and_input_injection_paths, management_api_and_header_abuse, snmp_read_write_and_trap_plane_misuse | credential_validation_matrix, auth_method_coverage_checks, protocol_specific_exploitability_checks, snmpv2_snmpv3_trap_operational_validation, api_and_web_management_flow_validation | P1 | P1 | P2 |
 | L5-L7 | Application | Session/Presentation/Application | ntp_ptp | 0 | no | default_credential_and_bruteforce_paths, auth_bypass_and_session_abuse, protocol_parser_and_input_injection_paths, management_api_and_header_abuse, snmp_read_write_and_trap_plane_misuse | credential_validation_matrix, auth_method_coverage_checks, protocol_specific_exploitability_checks, snmpv2_snmpv3_trap_operational_validation, api_and_web_management_flow_validation | P1 | P2 | P1 |
 | L5-L7 | Application | Session/Presentation/Application | snmp_snmpv3 | 4 | yes | default_credential_and_bruteforce_paths, auth_bypass_and_session_abuse, protocol_parser_and_input_injection_paths, management_api_and_header_abuse, snmp_read_write_and_trap_plane_misuse | credential_validation_matrix, auth_method_coverage_checks, protocol_specific_exploitability_checks, snmpv2_snmpv3_trap_operational_validation, api_and_web_management_flow_validation | P1 | P1 | P1 |
-| L5-L7 | Application | Session/Presentation/Application | ssh | 31 | yes | default_credential_and_bruteforce_paths, auth_bypass_and_session_abuse, protocol_parser_and_input_injection_paths, management_api_and_header_abuse, snmp_read_write_and_trap_plane_misuse | credential_validation_matrix, auth_method_coverage_checks, protocol_specific_exploitability_checks, snmpv2_snmpv3_trap_operational_validation, api_and_web_management_flow_validation | P1 | P1 | P1 |
+| L5-L7 | Application | Session/Presentation/Application | ssh | 32 | yes | default_credential_and_bruteforce_paths, auth_bypass_and_session_abuse, protocol_parser_and_input_injection_paths, management_api_and_header_abuse, snmp_read_write_and_trap_plane_misuse | credential_validation_matrix, auth_method_coverage_checks, protocol_specific_exploitability_checks, snmpv2_snmpv3_trap_operational_validation, api_and_web_management_flow_validation | P1 | P1 | P1 |
 | L5-L7 | Application | Session/Presentation/Application | telnet | 30 | yes | default_credential_and_bruteforce_paths, auth_bypass_and_session_abuse, protocol_parser_and_input_injection_paths, management_api_and_header_abuse, snmp_read_write_and_trap_plane_misuse | credential_validation_matrix, auth_method_coverage_checks, protocol_specific_exploitability_checks, snmpv2_snmpv3_trap_operational_validation, api_and_web_management_flow_validation | P2 | P3 | P2 |
 | L5-L7 | Application | Session/Presentation/Application | ftp_ftps_sftp | 32 | yes | default_credential_and_bruteforce_paths, auth_bypass_and_session_abuse, protocol_parser_and_input_injection_paths, management_api_and_header_abuse, snmp_read_write_and_trap_plane_misuse | credential_validation_matrix, auth_method_coverage_checks, protocol_specific_exploitability_checks, snmpv2_snmpv3_trap_operational_validation, api_and_web_management_flow_validation | P2 | P2 | P2 |
 | L5-L7 | Application | Session/Presentation/Application | http_https_api | 10 | yes | default_credential_and_bruteforce_paths, auth_bypass_and_session_abuse, protocol_parser_and_input_injection_paths, management_api_and_header_abuse, snmp_read_write_and_trap_plane_misuse | credential_validation_matrix, auth_method_coverage_checks, protocol_specific_exploitability_checks, snmpv2_snmpv3_trap_operational_validation, api_and_web_management_flow_validation | P1 | P1 | P1 |
@@ -947,14 +947,14 @@
 
 | Domain | Count |
 |---|---:|
-| catalogs | 9 |
+| catalogs | 10 |
 | wordlists | 10 |
 | ssh_keys | 8 |
 | vendors datasets | 2 |
 | mibs | 1758 |
 | modules.exploits | 129 |
 | modules.creds | 95 |
-| modules.scanners | 4 |
+| modules.scanners | 5 |
 | modules.generic | 16 |
 | modules.encoders | 13 |
 | modules.payloads | 32 |
@@ -1118,7 +1118,7 @@
 | dlink | multi_hnap_rce | 1 | 1 | 0 | 0 | 0 | 0 | 0 | - | rce |
 | dlink | ssh_default_creds | 1 | 0 | 1 | 0 | 0 | 0 | 0 | - | - |
 | dlink | telnet_default_creds | 1 | 0 | 1 | 0 | 0 | 0 | 0 | - | - |
-| fortinet | fortigate_os_backdoor | 1 | 1 | 0 | 0 | 0 | 0 | 0 | - | backdoor, rce |
+| fortinet | fortigate_os_backdoor | 1 | 1 | 0 | 0 | 0 | 0 | 0 | - | backdoor |
 | fortinet | ftp_default_creds | 1 | 0 | 1 | 0 | 0 | 0 | 0 | - | - |
 | fortinet | ssh_default_creds | 1 | 0 | 1 | 0 | 0 | 0 | 0 | - | - |
 | fortinet | telnet_default_creds | 1 | 0 | 1 | 0 | 0 | 0 | 0 | - | - |
@@ -1234,6 +1234,7 @@
 | python | reverse_udp | 1 | 0 | 0 | 0 | 0 | 1 | 0 | - | - |
 | python | rot13 | 1 | 0 | 0 | 0 | 0 | 0 | 1 | - | - |
 | python | url | 1 | 0 | 0 | 0 | 0 | 0 | 1 | - | - |
+| routers | fortigate_sslvpn_scan | 1 | 0 | 0 | 1 | 0 | 0 | 0 | CVE-2018-13379, CVE-2022-40684, CVE-2023-27997, CVE-2024-21762, CVE-2025-59718 | - |
 | routers | hootoo_scan | 1 | 0 | 0 | 1 | 0 | 0 | 0 | - | - |
 | routers | router_scan | 1 | 0 | 0 | 1 | 0 | 0 | 0 | - | - |
 | scanners | autopwn | 1 | 0 | 0 | 1 | 0 | 0 | 0 | - | - |
@@ -2191,7 +2192,7 @@
 
 - Totals: modules=1, exploits=1, creds=0, scanners=0, generic=0, payloads=0, encoders=0
 - CVEs: none
-- Attack classes: backdoor, rce
+- Attack classes: backdoor
 - Module paths:
   - `modules/exploits/routers/fortinet/fortigate_os_backdoor.py`
 
@@ -3114,6 +3115,14 @@
 - Attack classes: none
 - Module paths:
   - `modules/encoders/python/url.py`
+
+### routers / fortigate_sslvpn_scan
+
+- Totals: modules=1, exploits=0, creds=0, scanners=1, generic=0, payloads=0, encoders=0
+- CVEs: CVE-2018-13379, CVE-2022-40684, CVE-2023-27997, CVE-2024-21762, CVE-2025-59718
+- Attack classes: none
+- Module paths:
+  - `modules/scanners/routers/fortigate_sslvpn_scan.py`
 
 ### routers / hootoo_scan
 
