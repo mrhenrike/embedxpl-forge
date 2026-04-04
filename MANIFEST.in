@@ -1,0 +1,6 @@
+recursive-include routerxpl/resources/ssh_keys *.json *.key
+recursive-include routerxpl/resources/vendors *.dat *.csv
+recursive-include routerxpl/resources/wordlists *.txt
+recursive-include routerxpl/resources/mibs *.*
+recursive-include routerxpl/resources/catalogs *.json
+recursive-include routerxpl/resources/arsenal *.*

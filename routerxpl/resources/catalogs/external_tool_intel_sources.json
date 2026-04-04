@@ -1,0 +1,65 @@
+{
+  "notes": "External tooling/code intelligence sources tracked for RouterXPL-Forge roadmap and test coverage.",
+  "sources": [
+    {
+      "id": "belkin4xx-keygen",
+      "name": "Belkin4xx key correlation script",
+      "url": "https://bitbucket.org/dudux/belkin4xx/src/eb7545023f250589bfc2f944472964754a83f66d/belkin4xx.py?at=master",
+      "type": "algorithm-research",
+      "domain": "wifi-default-key",
+      "scope_alignment": "conditional",
+      "integration_status": "queued_for_analysis",
+      "test_matrix_status": "tracked"
+    },
+    {
+      "id": "pirelli-prg-eav4202n",
+      "name": "PRG EAV4202N default WPA algorithm research",
+      "url": "https://sviehb.wordpress.com/2011/12/04/prg-eav4202n-default-wpa-key-algorithm/",
+      "type": "algorithm-research",
+      "domain": "wifi-default-key",
+      "scope_alignment": "conditional",
+      "integration_status": "queued_for_analysis",
+      "test_matrix_status": "tracked"
+    },
+    {
+      "id": "threat9-upnpfuzz",
+      "name": "UPnPFuzz",
+      "url": "https://github.com/threat9/upnpfuzz/?tab=readme-ov-file",
+      "type": "fuzzing-tool",
+      "domain": "upnp-discovery-fuzzing",
+      "scope_alignment": "high",
+      "integration_status": "planned-adapter",
+      "test_matrix_status": "tracked"
+    },
+    {
+      "id": "devttys0-repos",
+      "name": "devttys0 repositories index",
+      "url": "https://github.com/devttys0?tab=repositories",
+      "type": "firmware-research-index",
+      "domain": "firmware-toolchain",
+      "scope_alignment": "high",
+      "integration_status": "planned-curation",
+      "test_matrix_status": "tracked"
+    },
+    {
+      "id": "devttys0-delink",
+      "name": "DeLink firmware decryption library",
+      "url": "https://github.com/devttys0/delink",
+      "type": "firmware-tool",
+      "domain": "dlink-firmware-decryption",
+      "scope_alignment": "high",
+      "integration_status": "planned-adapter",
+      "test_matrix_status": "tracked"
+    },
+    {
+      "id": "threat9-main",
+      "name": "THREAT9 official site",
+      "url": "https://threat9.com/",
+      "type": "vendor-context",
+      "domain": "project-context",
+      "scope_alignment": "reference",
+      "integration_status": "reference",
+      "test_matrix_status": "tracked"
+    }
+  ]
+}
