@@ -1676,6 +1676,73 @@
         "draytek firewall",
         "draytek vigor"
       ]
+    },
+    {
+      "id": "att_pace_5268ac",
+      "vendor": "AT&T / Pace",
+      "product": "5268AC U-Verse Gateway",
+      "segment": "isp-cpe/gateway",
+      "match_keywords": [
+        "5268ac",
+        "pace 5268",
+        "pace5268",
+        "att 5268",
+        "at&t 5268",
+        "u-verse",
+        "uverse",
+        "att gateway",
+        "at&t gateway"
+      ]
+    },
+    {
+      "id": "att_arris_bgw210",
+      "vendor": "AT&T / Arris",
+      "product": "BGW210-700 Fiber Gateway",
+      "segment": "isp-cpe/gateway",
+      "match_keywords": [
+        "bgw210",
+        "bgw210-700",
+        "arris bgw",
+        "att fiber gateway",
+        "at&t bgw210"
+      ]
+    },
+    {
+      "id": "att_arris_nvg589",
+      "vendor": "AT&T / Arris",
+      "product": "NVG589 VDSL Gateway",
+      "segment": "isp-cpe/modem-router",
+      "match_keywords": [
+        "nvg589",
+        "arris nvg589",
+        "att nvg589",
+        "at&t nvg589"
+      ]
+    },
+    {
+      "id": "att_arris_nvg599",
+      "vendor": "AT&T / Arris",
+      "product": "NVG599 VDSL Gateway",
+      "segment": "isp-cpe/modem-router",
+      "match_keywords": [
+        "nvg599",
+        "arris nvg599",
+        "att nvg599",
+        "at&t nvg599"
+      ]
+    },
+    {
+      "id": "att_nokia_bgw320",
+      "vendor": "AT&T / Nokia",
+      "product": "BGW320-505 XGS-PON Gateway",
+      "segment": "isp-cpe/gateway",
+      "match_keywords": [
+        "bgw320",
+        "bgw320-505",
+        "nokia bgw320",
+        "att xgspon",
+        "at&t xgs-pon"
+      ]
     }
   ],
   "yearly_brazil": [
@@ -2372,6 +2439,7 @@
         "asus_rt_ac86u",
         "linksys_e4200",
         "google_nest_wifi",
+        "att_arris_nvg589",
         "cisco_cat_3850",
         "juniper_ex2300"
       ]
@@ -2384,6 +2452,7 @@
         "asus_rt_ac86u",
         "netgear_xr500",
         "google_nest_wifi",
+        "att_arris_nvg599",
         "cisco_cat_3850",
         "arista_7000"
       ]
@@ -2408,6 +2477,7 @@
         "google_nest_wifi",
         "tplink_archer_c7",
         "dlink_dir822",
+        "att_pace_5268ac",
         "cisco_cat_9300",
         "arista_7000",
         "fortinet_fortigate_100f"
@@ -2421,6 +2491,7 @@
         "google_nest_wifi",
         "tplink_archer_c7",
         "netgear_xr500",
+        "att_pace_5268ac",
         "cisco_cat_9300",
         "arista_7000",
         "fortinet_fortigate_100f"
@@ -2435,6 +2506,8 @@
         "tplink_archer_c7",
         "netgear_xr500",
         "openwrt_x86_64",
+        "att_pace_5268ac",
+        "att_arris_bgw210",
         "cisco_cat_9300",
         "arista_7000",
         "cisco_nexus_9000",
@@ -2450,6 +2523,8 @@
         "google_nest_wifi",
         "tplink_deco_m4",
         "openwrt_x86_64",
+        "att_pace_5268ac",
+        "att_arris_bgw210",
         "cisco_cat_9300",
         "arista_7000",
         "cisco_nexus_9000",
@@ -2481,6 +2556,7 @@
         "tplink_deco_m4",
         "google_nest_wifi",
         "openwrt_x86_64",
+        "att_arris_bgw210",
         "cisco_cat_9300",
         "arista_7000",
         "cisco_nexus_9000",
@@ -2497,6 +2573,7 @@
         "tplink_deco_m4",
         "mercusys_mr60x",
         "openwrt_x86_64",
+        "att_arris_bgw210",
         "cisco_cat_9300",
         "arista_7000",
         "cisco_nexus_9000",
@@ -2513,6 +2590,8 @@
         "huawei_ax3_dual_core",
         "mercusys_mr60x",
         "openwrt_x86_64",
+        "att_arris_bgw210",
+        "att_nokia_bgw320",
         "cisco_cat_9300",
         "arista_7000",
         "cisco_nexus_9000",
@@ -2529,6 +2608,8 @@
         "mercusys_mr60x",
         "huawei_ax2s",
         "openwrt_x86_64",
+        "att_arris_bgw210",
+        "att_nokia_bgw320",
         "cisco_cat_9300",
         "arista_7000",
         "cisco_nexus_9000",
@@ -2545,6 +2626,8 @@
         "eero_max_7",
         "tplink_archer_be550",
         "openwrt_x86_64",
+        "att_arris_bgw210",
+        "att_nokia_bgw320",
         "cisco_cat_9300",
         "arista_7000",
         "cisco_nexus_9000",
@@ -2561,6 +2644,8 @@
         "glinet_flint3",
         "mercusys_mr80x",
         "openwrt_x86_64",
+        "att_arris_bgw210",
+        "att_nokia_bgw320",
         "cisco_cat_9300",
         "arista_7000",
         "cisco_nexus_9000",
