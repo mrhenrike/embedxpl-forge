@@ -1,32 +1,37 @@
-## Issue Type
+## Type
 - [ ] Bug
-- [ ] Feature request
-- [ ] Coverage/catalog update
+- [ ] Feature
+- [ ] Catalog/coverage update
 - [ ] Compatibility regression
 
-## Scope Check
-- [ ] In-scope asset type (router/switch/tap/fw/ngfw)
-- [ ] Not camera/printer/dvr related
+**Languages / Idiomas:** Issues **English (en-US)** preferred for maintainers; you may add Portuguese below. | *Issues em **inglês** facilitam a triagem; pode acrescentar português.*
 
-## Steps to Reproduce (for bugs)
+## Scope
+- [ ] In-scope asset (router/switch/TAP/fw/NGFW)
+- [ ] Not camera/printer/DVR focused
+
+## Reproduction (bugs)
 1.
 2.
 3.
-4.
 
 ## Environment
 - RouterXPL-Forge commit/tag:
-- Operating System and version:
-- Python version (`python --version`):
-- Virtual environment details:
+- OS:
+- Python (`python --version`):
+- Virtualenv:
 
-## Current Behavior
-Describe what is happening.
+## Current behavior
 
-## Expected Behavior
-Describe what should happen.
+
+## Expected behavior
+
 
 ## Evidence
-- Logs/traceback (sanitized):
-- Related module path(s):
-- Optional references (CVE, advisories, PoC links):
+- Logs (sanitized):
+- Module path(s):
+- References (CVE, advisory):
+
+---
+
+[CODE_OF_CONDUCT.md](../CODE_OF_CONDUCT.md) · [CODE_OF_CONDUCT.pt-BR.md](../CODE_OF_CONDUCT.pt-BR.md)

@@ -1,30 +1,58 @@
-# Code of Conduct
+# Code of Conduct — RouterXPL-Forge
 
-Author: André Henrique (@mrhenrike) | União Geek — https://github.com/Uniao-Geek
+**Author:** André Henrique ([@mrhenrike](https://github.com/mrhenrike)) \| **União Geek** — [https://github.com/Uniao-Geek](https://github.com/Uniao-Geek)
 
-## Our Commitment
+**Language:** **English (en-US)** — default. **Português (pt-BR):** [CODE_OF_CONDUCT.pt-BR.md](CODE_OF_CONDUCT.pt-BR.md)
 
-In the interest of fostering an open and welcoming environment, maintainers and contributors of RouterXPL-Forge commit to making participation harassment-free for everyone, regardless of age, body size, disability, ethnicity, gender identity, level of experience, education, socio-economic status, nationality, personal appearance, race, religion, or sexual identity and orientation.
+## Our pledge
 
-## Expected Behavior
+To foster an open and respectful environment, maintainers, contributors, and users of RouterXPL-Forge pledge to participate free of harassment, regardless of age, body size, disability, ethnicity, gender identity, experience level, education, socio-economic status, nationality, personal appearance, race, religion, or sexual identity and orientation.
 
-- Use respectful, inclusive language.
-- Accept constructive feedback.
-- Focus on technical merit and reproducibility.
-- Respect legal and ethical boundaries for security research.
+## Scope
 
-## Unacceptable Behavior
+This Code applies to:
 
-- Harassment, intimidation, discrimination, or personal attacks.
-- Doxxing, threats, or publication of private information.
-- Submission of malicious content unrelated to project scope.
-- Requests or contributions targeting out-of-scope assets (camera/printer/dvr) for this repository.
+- Issues, pull requests, discussions, and reviews in this repository
+- Communication on behalf of the project (mailing lists, linked chats, events)
+- Use of examples and guidance from this project when interacting with third parties
 
-## Enforcement
+## Expected behavior
 
-Project maintainers may remove, edit, or reject contributions that violate this Code of Conduct.
+- Inclusive, professional language
+- Critique ideas and implementations, not people
+- Accept constructive feedback in good faith
+- Focus on technical reproducibility, responsible security research, and clarity
+- Respect legal and ethical boundaries
 
-## Reporting
+## Unacceptable behavior
 
-Please report behavior that violates this Code of Conduct through the repository's private security reporting process described in `SECURITY.md`.
+- Harassment, intimidation, discrimination, or personal attacks
+- Doxxing, threats, or deliberate exposure of private data
+- Contributions whose primary purpose is harm outside authorized testing
+- Pressuring others into illegal or unauthorized testing
+- Persistent commercial spam or off-topic noise in project channels
+- Systematic requests outside declared repository scope (e.g., camera/printer/DVR-only modules when the project targets another focus)
 
+## Security reports vs conduct reports
+
+**Vulnerabilities in this software** → follow [SECURITY.md](SECURITY.md).  
+**Conduct violations** → use the private reporting path in [SECURITY.md](SECURITY.md) or the platform’s community tools.
+
+## Maintainer responsibilities
+
+- Clarify acceptable standards
+- Take reasonable corrective action for misconduct
+- Remove, edit, or reject comments, commits, issues, or contributions that violate this Code
+- Temporarily or permanently ban contributors for severe violations, per platform policy
+
+## Consequences
+
+Depending on severity: private warning, content removal, thread closure, or loss of access to project channels.
+
+## Attribution
+
+Inspired by common open-source Code of Conduct practice; adapted to RouterXPL-Forge scope and governance.
+
+---
+
+> **Author:** André Henrique ([@mrhenrike](https://github.com/mrhenrike)) \| **União Geek** — [https://github.com/Uniao-Geek](https://github.com/Uniao-Geek)

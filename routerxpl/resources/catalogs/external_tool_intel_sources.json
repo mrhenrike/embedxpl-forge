@@ -60,6 +60,71 @@
       "scope_alignment": "reference",
       "integration_status": "reference",
       "test_matrix_status": "tracked"
+    },
+    {
+      "id": "routerpwn-site",
+      "name": "RouterPWN (SOHO router exploits, generators, advisories)",
+      "url": "https://routerpwn.com/",
+      "type": "exploit-index",
+      "domain": "router-soho",
+      "scope_alignment": "high",
+      "integration_status": "queued_for_curation",
+      "test_matrix_status": "tracked",
+      "notes": "Third-party one-click exploit index; triage license/ethics before porting payloads; prefer lab-validated modules."
+    },
+    {
+      "id": "routerpwn-wayback",
+      "name": "RouterPWN — Internet Archive (Wayback) catch-all",
+      "url": "https://web.archive.org/web/*/http://routerpwn.com/",
+      "type": "exploit-index-archive",
+      "domain": "router-soho",
+      "scope_alignment": "high",
+      "integration_status": "queued_for_curation",
+      "test_matrix_status": "tracked",
+      "notes": "Historical snapshots for recovered PoC links and vendor-specific pages when the live site changes."
+    },
+    {
+      "id": "routerpwn-github-mirror",
+      "name": "hkm/routerpwn.com (static mirror / offline bundle)",
+      "url": "https://github.com/hkm/routerpwn.com",
+      "type": "source-mirror",
+      "domain": "router-soho",
+      "scope_alignment": "high",
+      "integration_status": "queued_for_analysis",
+      "test_matrix_status": "tracked"
+    },
+    {
+      "id": "exploit-db-hardware-search",
+      "name": "Exploit-DB — hardware / router vendor search",
+      "url": "https://www.exploit-db.com/",
+      "type": "exploit-index",
+      "domain": "router-switch-fw",
+      "scope_alignment": "conditional",
+      "integration_status": "reference",
+      "test_matrix_status": "tracked",
+      "notes": "Curate per-vendor queries (e.g. Intelbras, Mercusys); do not bulk-import copyrighted exploit text without review."
+    },
+    {
+      "id": "intelbras-vuln-checker-gist",
+      "name": "Community Intelbras router vuln checklist (gist)",
+      "url": "https://gist.github.com/MrCl0wnLab/2c325380cff786e0e1556c1fc8306098",
+      "type": "research-index",
+      "domain": "router-br",
+      "scope_alignment": "conditional",
+      "integration_status": "queued_for_curation",
+      "test_matrix_status": "tracked",
+      "notes": "Cross-check CVEs and EDB IDs against cve_extended_catalog before module design."
+    },
+    {
+      "id": "bitbucket-router-research",
+      "name": "Bitbucket search — router / firmware / exploit keywords",
+      "url": "https://bitbucket.org/search?q=router",
+      "type": "discovery-hint",
+      "domain": "router-soho",
+      "scope_alignment": "low",
+      "integration_status": "reference",
+      "test_matrix_status": "tracked",
+      "notes": "Refine query per vendor (e.g. +intelbras, +openwrt); verify repo license before reuse."
     }
   ]
 }

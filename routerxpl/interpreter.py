@@ -289,12 +289,13 @@ class RouterXPLInterpreter(BaseInterpreter):
  | |\\ \\ (_) | |_| | ||  __/ |  /\\__/ / |_) | | (_) | | |_
  \\_| \\_\\___/ \\__,_|\\__\\___|_|  \\____/| .__/|_|\\___/|_|\\__|
                                      | |
-       Exploitation Framework for    |_|    by Threat9
+       Exploitation Framework for    |_|    RouterXPL-Forge
             Embedded Devices
 
  Codename   : I Knew You Were Trouble
  Version    : 3.4.7
- Homepage   : https://www.threat9.com - @threatnine
+ Maintained : André Henrique (@mrhenrike) | União Geek — https://github.com/Uniao-Geek
+ Upstream   : threat9/routersploit (legacy lineage)
 
  Exploits: {exploits_count} Scanners: {scanners_count} Creds: {creds_count} Generic: {generic_count} Payloads: {payloads_count} Encoders: {encoders_count}
 """.format(exploits_count=self.modules_count["exploits"],

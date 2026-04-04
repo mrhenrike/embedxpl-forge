@@ -4,3 +4,4 @@ recursive-include routerxpl/resources/wordlists *.txt
 recursive-include routerxpl/resources/mibs *.*
 recursive-include routerxpl/resources/catalogs *.json
 recursive-include routerxpl/resources/arsenal *.*
+recursive-include routerxpl/resources/ml *.json
