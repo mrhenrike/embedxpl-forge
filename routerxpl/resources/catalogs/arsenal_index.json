@@ -1816,7 +1816,7 @@
   ],
   "dependencies": {
     "runtime": [
-      "requests==2.32.4",
+      "requests>=2.33.0",
       "paramiko",
       "pysnmp",
       "pycryptodome",
