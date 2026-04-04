@@ -18,7 +18,7 @@
 
 ## Global Capability Summary
 
-- Generated at: 2026-04-03T22:48:36-03:00
+- Module tree (routerxpl/modules): 0cb797341784684dd36b408375378362a0aebf61
 - Total modules indexed: 289
 - Distinct vendor/product entries: 289
 - Distinct CVEs mapped in modules: 27
