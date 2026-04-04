@@ -21,20 +21,20 @@ LOGGER = logging.getLogger("coverage_matrix")
 REPO_ROOT = Path(__file__).resolve().parent.parent
 
 
-def _generated_at_stamp(repo_root: Path) -> str:
-    """Return matrix timestamp; prefer git commit time for reproducible CI/local diffs."""
+def _matrix_source_revision(repo_root: Path) -> str:
+    """Return git tree id for routerxpl/modules (stable for a checkout; not the commit hash)."""
     try:
         completed = subprocess.run(
-            ["git", "log", "-1", "--format=%cI"],
+            ["git", "rev-parse", "HEAD:routerxpl/modules"],
             cwd=str(repo_root),
             capture_output=True,
             text=True,
             timeout=8,
             check=False,
         )
-        stamp = (completed.stdout or "").strip()
-        if completed.returncode == 0 and stamp:
-            return stamp
+        rev = (completed.stdout or "").strip()
+        if completed.returncode == 0 and rev:
+            return rev
     except (OSError, subprocess.TimeoutExpired):
         pass
     return datetime.now(timezone.utc).isoformat()
@@ -851,7 +851,7 @@ def _build_summary(records: List[ModuleRecord], matrix: Dict[Tuple[str, str], Co
     lines: List[str] = [
         "## Global Capability Summary",
         "",
-        f"- Generated at: {_generated_at_stamp(REPO_ROOT)}",
+        f"- Module tree (routerxpl/modules): {_matrix_source_revision(REPO_ROOT)}",
         f"- Total modules indexed: {len(records)}",
         f"- Distinct vendor/product entries: {len(matrix)}",
         f"- Distinct CVEs mapped in modules: {len(cves)}",
