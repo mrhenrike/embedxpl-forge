@@ -18,7 +18,7 @@
 
 ## Global Capability Summary
 
-- Generated at: 2026-04-03T23:04:12.451212+00:00
+- Generated at: 2026-04-03T22:48:36-03:00
 - Total modules indexed: 289
 - Distinct vendor/product entries: 289
 - Distinct CVEs mapped in modules: 27
