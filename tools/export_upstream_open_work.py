@@ -5,6 +5,9 @@
 Issue comments are fetched for open issues only, capped per repository to stay within
 reasonable API volume (override with --max-issue-comments-per-repo).
 
+With ``--fetch-pr-review-details``, also pulls PR reviews, inline review comments, and
+PR conversation comments (caps with ``--max-open-prs-for-review-details``).
+
 GitLab projects are skipped unless GL_TOKEN + project id mapping is added later.
 
 Author: André Henrique (@mrhenrike) | União Geek
