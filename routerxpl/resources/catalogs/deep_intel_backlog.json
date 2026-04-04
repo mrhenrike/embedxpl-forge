@@ -1,5 +1,5 @@
 {
-  "total": 18,
+  "total": 19,
   "items": [
     {
       "id": "discord-001",
@@ -204,6 +204,18 @@
       "keyword_hits": "0",
       "status": "pending_analysis",
       "notes": "device_pool has Intelbras SKUs with no routerxpl/vendor path hit; validate CVE-2019-19516, RF301K cfg leak, etc. against firmware."
+    },
+    {
+      "id": "embedded-local-third-party-poc",
+      "origin": "local_submodule_scan",
+      "name": "Mirrors third-party-router-poc embutidos (RouterXPL catalogs)",
+      "domain": "router-ngfw-switch-iot-edge",
+      "url": "",
+      "priority": "p1",
+      "recommended_action": "port_high_value_pocs_to_routerxpl_modules",
+      "keyword_hits": "0",
+      "status": "embedded_catalog_ready",
+      "notes": "Ver embedded_third_party_poc_intel.json e external_tool_intel_sources (local-poc-*); tg12 CVE index ~7,9k só no JSON; CVE DB carrega hints dos outros mirrors."
     },
     {
       "id": "mercusys-soho-gap",

@@ -172,6 +172,50 @@ def _load_embedded() -> List[CVEEntry]:
     return [_entry_from_mapping(raw) for raw in _EMBEDDED_CVES]
 
 
+def _load_poc_intel_cve_hints(repo_root: Path) -> List[CVEEntry]:
+    """Load CVE IDs discovered in local third-party PoC mirrors (thin hints, lowest priority)."""
+
+    path = repo_root / "resources" / "catalogs" / "embedded_third_party_poc_intel.json"
+    if not path.exists():
+        return []
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        logger.warning("embedded_third_party_poc_intel.json unreadable: %s", exc)
+        return []
+    # Bulk indices (tg12, ExploitDB mirrors) stay in JSON for tooling — not loaded into lookup RAM.
+    skip_slugs = frozenset(
+        {
+            "tg12__PoC_CVEs",
+            "exploit-database__exploitdb",
+            "exploit-database__exploitdb-bin-sploits",
+        }
+    )
+    cve_set: Set[str] = set()
+    for repo in data.get("repositories") or []:
+        if repo.get("local_slug") in skip_slugs:
+            continue
+        for cid in repo.get("cves_found") or []:
+            if isinstance(cid, str) and cid.upper().startswith("CVE-"):
+                cve_set.add(cid.upper())
+    entries: List[CVEEntry] = []
+    for cid in sorted(cve_set):
+        entries.append(
+            CVEEntry(
+                cve_id=cid,
+                vendor="upstream_poc_mirror",
+                product="third_party_router_poc",
+                affected_versions="",
+                description="CVE referenciado em clone local third-party-router-poc; validar com NVD/PSIRT antes de usar.",
+                cvss_score=0.0,
+                access_vector="REMOTE",
+                exploit_available=True,
+                references=[],
+            )
+        )
+    return entries
+
+
 def _load_extended_json_catalog(repo_root: Path) -> List[CVEEntry]:
     """Load additional CVE rows from resources/catalogs/cve_extended_catalog.json."""
     path = repo_root / "resources" / "catalogs" / "cve_extended_catalog.json"
@@ -200,6 +244,9 @@ def _merge_cve_entries(repo_root: Path) -> List[CVEEntry]:
         by_id[entry.cve_id.upper()] = entry
     for entry in _load_extended_json_catalog(repo_root):
         by_id[entry.cve_id.upper()] = entry
+    for entry in _load_poc_intel_cve_hints(repo_root):
+        if entry.cve_id.upper() not in by_id:
+            by_id[entry.cve_id.upper()] = entry
     return list(by_id.values())
 
 
