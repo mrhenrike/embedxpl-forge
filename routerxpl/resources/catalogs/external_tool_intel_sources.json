@@ -116,6 +116,39 @@
       "notes": "Cross-check CVEs and EDB IDs against cve_extended_catalog before module design."
     },
     {
+      "id": "metasploit-framework-github",
+      "name": "Metasploit Framework (Rapid7) — upstream source",
+      "url": "https://github.com/rapid7/metasploit-framework",
+      "type": "exploit-framework",
+      "domain": "orchestration-bridge",
+      "scope_alignment": "high",
+      "integration_status": "adapter-module",
+      "test_matrix_status": "tracked",
+      "notes": "RouterXPL: generic/external/metasploit_console_bridge.py invokes local msfconsole; do not strip BSD license from MSF tree."
+    },
+    {
+      "id": "exploitdb-gitlab",
+      "name": "Exploit-DB / searchsploit (OffSec) — upstream",
+      "url": "https://gitlab.com/exploit-database/exploitdb",
+      "type": "exploit-database",
+      "domain": "research-cli",
+      "scope_alignment": "high",
+      "integration_status": "adapter-module",
+      "test_matrix_status": "tracked",
+      "notes": "RouterXPL: generic/external/searchsploit_bridge.py; GPLv2 applies to packaged DB/scripts."
+    },
+    {
+      "id": "mikrotikapi-bf-github",
+      "name": "MikrotikAPI-BF — RouterOS toolkit (author)",
+      "url": "https://github.com/mrhenrike/MikrotikAPI-BF",
+      "type": "vendor-toolkit",
+      "domain": "mikrotik-routeros",
+      "scope_alignment": "high",
+      "integration_status": "adapter-module",
+      "test_matrix_status": "tracked",
+      "notes": "Bridge: generic/external/mikrotikapi_bf_bridge.py; MIT upstream."
+    },
+    {
       "id": "bitbucket-router-research",
       "name": "Bitbucket search — router / firmware / exploit keywords",
       "url": "https://bitbucket.org/search?q=router",

@@ -1,0 +1,31 @@
+{
+  "title": "Official upstream clones for RouterXPL-Forge integration (curated)",
+  "disclaimer_pt": "Isto não é aconselhamento jurídico. Cumpra as licenças e atribuições de cada projeto. O RouterXPL-Forge não embute o Metasploit nem o Exploit-DB por omissão — usa ferramentas instaladas no host ou submódulos que você adiciona ao superprojeto.",
+  "disclaimer_en": "Not legal advice. Comply with each project's license and attribution. RouterXPL-Forge does not vendor Metasploit/Exploit-DB by default — use local installs or your own submodules.",
+  "repositories": [
+    {
+      "id": "rapid7-metasploit-framework",
+      "clone_url": "https://github.com/rapid7/metasploit-framework.git",
+      "homepage": "https://www.metasploit.com/",
+      "license": "BSD-3-Clause (see upstream LICENSE)",
+      "rxf_module": "generic/external/metasploit_console_bridge.py",
+      "notes": "Run modules via local msfconsole; keep Rapid7 copyrights on MSF sources."
+    },
+    {
+      "id": "offensive-security-exploitdb",
+      "clone_url": "https://gitlab.com/exploit-database/exploitdb.git",
+      "homepage": "https://www.exploit-db.com/",
+      "license": "GPL-2.0 (database and searchsploit)",
+      "rxf_module": "generic/external/searchsploit_bridge.py",
+      "notes": "Install searchsploit or clone exploitdb; preserve GPLv2 notices if redistributing."
+    },
+    {
+      "id": "mrhenrike-mikrotikapi-bf",
+      "clone_url": "https://github.com/mrhenrike/MikrotikAPI-BF.git",
+      "homepage": "https://pypi.org/project/mikrotikapi-bf/",
+      "license": "MIT (upstream)",
+      "rxf_module": "generic/external/mikrotikapi_bf_bridge.py",
+      "notes": "Author's project; bridge delegates to CLI or script path."
+    }
+  ]
+}
