@@ -1,5 +1,5 @@
 {
-  "notes": "Devices, vendors and models explicitly requested or discussed in Discord feedback.",
+  "notes": "Devices, vendors and models explicitly requested or discussed in Discord feedback. Field suggested_rxf_modules lists RouterXPL-Forge module paths (relative to routerxpl/modules) useful for creds/scan/exploit — not exhaustive.",
   "entries": [
     {
       "source": "discord",
@@ -7,7 +7,16 @@
       "model": "AC1700",
       "segment": "router",
       "context": "user asked applicability to TP-Link AC1700",
-      "match_keywords": ["ac1700", "tplink", "tp-link"]
+      "match_keywords": ["ac1700", "tplink", "tp-link"],
+      "suggested_rxf_modules": [
+        "creds/routers/tplink/telnet_default_creds.py",
+        "creds/routers/tplink/ssh_default_creds.py",
+        "creds/routers/tplink/ftp_default_creds.py",
+        "scanners/routers/router_scan.py",
+        "exploits/routers/tplink/archer_c9_admin_password_reset.py",
+        "exploits/routers/tplink/archer_c2_c20i_rce.py",
+        "generic/wordlist/wordlist_generator.py"
+      ]
     },
     {
       "source": "discord",
@@ -15,7 +24,15 @@
       "model": "AC1750",
       "segment": "router",
       "context": "home setup mention, landlord-provided router",
-      "match_keywords": ["ac1750", "tplink", "tp-link", "archer c7"]
+      "match_keywords": ["ac1750", "tplink", "tp-link", "archer c7"],
+      "suggested_rxf_modules": [
+        "creds/routers/tplink/telnet_default_creds.py",
+        "creds/routers/tplink/ssh_default_creds.py",
+        "scanners/routers/router_scan.py",
+        "exploits/routers/tplink/wdr740nd_wdr740n_path_traversal.py",
+        "exploits/routers/tplink/wdr740nd_wdr740n_backdoor.py",
+        "generic/cve/cve_lookup.py"
+      ]
     },
     {
       "source": "discord",
@@ -23,7 +40,13 @@
       "model": "XB7 (Gen2)",
       "segment": "isp-cpe/modem-router",
       "context": "customer modem in bridged / passthrough chain",
-      "match_keywords": ["xb7", "rogers", "shaw", "comcast"]
+      "match_keywords": ["xb7", "rogers", "shaw", "comcast"],
+      "suggested_rxf_modules": [
+        "scanners/routers/router_scan.py",
+        "creds/generic/http_basic_digest_default.py",
+        "creds/generic/ssh_default.py",
+        "generic/cve/cve_lookup.py"
+      ]
     },
     {
       "source": "discord",
@@ -31,7 +54,13 @@
       "model": "CGNM-2250",
       "segment": "isp-cpe/modem-router",
       "context": "IP passthrough discussion and attack surface concerns",
-      "match_keywords": ["hitron", "cgnm-2250", "cgnm2250"]
+      "match_keywords": ["hitron", "cgnm-2250", "cgnm2250"],
+      "suggested_rxf_modules": [
+        "scanners/routers/router_scan.py",
+        "creds/generic/http_basic_digest_default.py",
+        "generic/cve/cve_lookup.py"
+      ],
+      "related_cves_hint": ["CVE-2017-9833"]
     },
     {
       "source": "discord",
@@ -39,7 +68,14 @@
       "model": "5268AC",
       "segment": "isp-cpe/gateway",
       "context": "explicit pentest request in conversation",
-      "match_keywords": ["pace", "5268ac", "att", "at&t", "uverse", "u-verse"]
+      "match_keywords": ["pace", "5268ac", "att", "at&t", "uverse", "u-verse"],
+      "suggested_rxf_modules": [
+        "scanners/routers/router_scan.py",
+        "creds/generic/telnet_default.py",
+        "creds/generic/http_basic_digest_default.py",
+        "generic/cve/cve_lookup.py"
+      ],
+      "related_cves_hint": ["CVE-2017-14116"]
     },
     {
       "source": "discord",
@@ -47,7 +83,13 @@
       "model": "PRG EAV4202N / PRGAV4202N",
       "segment": "dsl-gateway",
       "context": "default WPA algorithm weakness discussion",
-      "match_keywords": ["prg", "eav4202n", "prgav4202n", "pirelli", "adb"]
+      "match_keywords": ["prg", "eav4202n", "prgav4202n", "pirelli", "adb"],
+      "suggested_rxf_modules": [
+        "scanners/routers/router_scan.py",
+        "generic/pcap/pcap_handshake_extractor.py",
+        "generic/pcap/pcap_offline_wpa_crack.py",
+        "generic/wordlist/wordlist_generator.py"
+      ]
     },
     {
       "source": "discord",
@@ -55,7 +97,14 @@
       "model": "TG585v6",
       "segment": "dsl-gateway",
       "context": "legacy vulnerable fleet mentioned in thread",
-      "match_keywords": ["tg585v6", "technicolor", "thomson"]
+      "match_keywords": ["tg585v6", "technicolor", "thomson"],
+      "suggested_rxf_modules": [
+        "creds/routers/technicolor/telnet_default_creds.py",
+        "creds/routers/technicolor/ssh_default_creds.py",
+        "exploits/routers/technicolor/dwg855_authbypass.py",
+        "exploits/routers/technicolor/tg784_authbypass.py",
+        "scanners/routers/router_scan.py"
+      ]
     },
     {
       "source": "discord",
@@ -63,7 +112,12 @@
       "model": "EasyBox (German variants)",
       "segment": "dsl-gateway",
       "context": "algorithm request in discussion comments",
-      "match_keywords": ["easybox", "vodafone easybox"]
+      "match_keywords": ["easybox", "vodafone easybox"],
+      "suggested_rxf_modules": [
+        "scanners/routers/router_scan.py",
+        "creds/generic/http_basic_digest_bruteforce.py",
+        "generic/wordlist/wordlist_generator.py"
+      ]
     },
     {
       "source": "discord",
@@ -71,7 +125,13 @@
       "model": "Low-cost Chinese ONU/CPE",
       "segment": "onu/isp-cpe",
       "context": "claim that modern cheap ONUs are not covered",
-      "match_keywords": ["onu", "gpon", "xpon", "ont", "cpe"]
+      "match_keywords": ["onu", "gpon", "xpon", "ont", "cpe"],
+      "suggested_rxf_modules": [
+        "scanners/routers/router_scan.py",
+        "exploits/routers/multi/misfortune_cookie.py",
+        "generic/cve/cve_lookup.py"
+      ],
+      "related_cves_hint": ["CVE-2018-10562"]
     }
   ]
 }
